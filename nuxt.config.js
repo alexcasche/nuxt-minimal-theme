@@ -17,7 +17,7 @@ export default {
   styleResources: { scss: ['~/assets/styles/helpers.scss'] },
   plugins: [],
   components: true,
-  buildModules: ['@nuxtjs/eslint-module'],
+  // buildModules: ['@nuxtjs/eslint-module'],
   modules: ['@nuxtjs/style-resources'],
   build: {},
 }
