@@ -1,0 +1,18 @@
+@mixin media-small-down {
+  @media only screen and (max-width: $breakpoint-small - 1) { @content; }
+}
+@mixin media-small-up {
+  @media only screen and (min-width: $breakpoint-small) { @content; }
+}
+@mixin media-medium-down {
+  @media only screen and (max-width: $breakpoint-medium - 1) { @content; }
+}
+@mixin media-medium-up {
+  @media only screen and (min-width: $breakpoint-medium) { @content; }
+}
+@mixin media-large-down {
+  @media only screen and (max-width: $breakpoint-large - 1) { @content; }
+}
+@mixin media-large-up {
+  @media only screen and (max-width: $breakpoint-large) { @content; }
+}
