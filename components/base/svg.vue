@@ -17,7 +17,7 @@ export default {
   },
   data: () => ({ svg: false }),
   created () {
-    if(this.name){
+    if(this.name) {
       this.svg = require(`~/assets/svgs/${this.name}`).default
     }
   }
