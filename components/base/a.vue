@@ -5,6 +5,7 @@
     v-bind="{ ...$attrs, ...linkAttrs }"
     @click.native="$emit('click')"
   >
+    {{ text }}
     <slot />
   </component>
   <component class="a"
@@ -13,6 +14,7 @@
     v-bind="{ ...$attrs, ...linkAttrs }"
     @click="$emit('click')"
   >
+    {{ text }}
     <slot />
   </component>
 </template>
@@ -20,6 +22,12 @@
 <script>
 export default {
   name: 'baseA',
+  props: {
+    text: {
+      type: String,
+      required: false
+    }
+  },
   computed: {
     urlString() {
       let url = this.$attrs.href

@@ -1,4 +1,6 @@
 THEME
+  Base
+    accordion
   Header
     nav
     menu

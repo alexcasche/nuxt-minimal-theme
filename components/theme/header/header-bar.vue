@@ -66,11 +66,13 @@ export default {
 .header-bar__account {
   display: flex;
   gap: 6px;
+  white-space: nowrap;
 }
 .header-bar__cart {
   display: flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 .header-bar__cart-icon {
   height: 16px;

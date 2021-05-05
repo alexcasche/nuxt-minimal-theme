@@ -2,6 +2,7 @@
   <button :class="['button', role ? `is-${role}` : null]"
     @click="$emit('click')"
   >
+    {{ text }}
     <slot />
   </button>
 </template>
@@ -13,6 +14,10 @@ export default {
     role: {
       type: String,
       default: 'primary'
+    },
+    text: {
+      type: String,
+      required: false
     }
   }
 }

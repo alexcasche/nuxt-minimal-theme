@@ -1,0 +1,30 @@
+.hide-small-down {
+  @include media-small-down {
+    display: none;
+  }
+}
+.hide-small-up {
+  @include media-small-up {
+    display: none;
+  }
+}
+.hide-medium-down {
+  @include media-medium-down {
+    display: none;
+  }
+}
+.hide-medium-up {
+  @include media-medium-up {
+    display: none;
+  }
+}
+.hide-large-down {
+  @include media-large-down {
+    display: none;
+  }
+}
+.hide-large-up {
+  @include media-large-up {
+    display: none;
+  }
+}
