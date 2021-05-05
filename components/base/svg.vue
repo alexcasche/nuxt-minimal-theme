@@ -1,6 +1,5 @@
 <template>
-  <span
-    class="svg"
+  <span class="svg"
     v-if="svg"
     v-html="svg"
   />

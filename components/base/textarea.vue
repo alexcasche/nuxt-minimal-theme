@@ -1,8 +1,7 @@
 <template>
-  <textarea
+  <textarea class="text-area"
     :value="$attrs.value"
     @input="e => $emit('input', e.target.value)"
-    class="text-area"
   />
 </template>
 

@@ -1,7 +1,6 @@
 <template>
-  <input
+  <input class="input"
     @input="e => $emit('input', e.target.value)"
-    class="input"
     :pattern="$attrs.pattern || pattern"
   />
 </template>

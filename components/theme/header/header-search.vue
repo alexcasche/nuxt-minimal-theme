@@ -1,18 +1,13 @@
 <template>
-  <form
-    class="header-search"
+  <form class="header-search"
     @submit.prevent="handleSubmit"
   >
     <button class="header-search__button">
-      <base-svg
-        class="header-search__svg"
+      <base-svg class="header-search__svg"
         name="search"
       />
     </button>
-    <base-input
-      class="header-search__input"
-
-    />
+    <base-input class="header-search__input" />
   </form>
 </template>
 

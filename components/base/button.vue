@@ -1,7 +1,6 @@
 <template>
-  <button
+  <button :class="['button', role ? `is-${role}` : null]"
     @click="$emit('click')"
-    :class="['button', role ? `is-${role}` : null]"
   >
     <slot />
   </button>
@@ -32,6 +31,16 @@ export default {
     font-size: 1.8rem;
     line-height: 1.5;
     font-family: $font-body;
+  }
+  .button.is-black {
+    background-color: $color-black;
+    color: $color-white;
+    &:hover {
+      background-color: darken($color-black, 5%);
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.125em rgba($color-black, 25%);
+    }
   }
   .button.is-primary {
     background-color: $color-primary;

@@ -1,0 +1,20 @@
+THEME
+  Footer
+  Header
+
+PAGES
+  Returns
+  About Us
+
+  Home
+  Collection
+  PDP
+  Cart
+  Contact
+  News
+
+  Search
+  Account
+    Login
+    Register
+    Forgot
