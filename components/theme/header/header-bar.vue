@@ -5,7 +5,20 @@
         v-html="'50% on all women\'s shoes for a limited time!'"
       />
       <div class="header-bar__actions">
-        <button class="header-bar__menu">
+        <button class="header-bar__menu hide-medium-up"
+          @click="menuOpen = !menuOpen"
+        >
+          <base-svg class="header-bar__menu-icon"
+            v-show="!menuOpen"
+            :name="'menu'"
+          />
+          <base-svg class="header-bar__menu-icon"
+            v-show="menuOpen"
+            name="close"
+          />
+          <span class="header-bar__menu-text"
+            v-html="menuOpen ? 'close' : 'menu'"
+          />
         </button>
         <nav class="header-bar__account hide-medium-down">
           <nuxt-link class="header-bar__account-link"
@@ -42,6 +55,9 @@ import themeHeaderSearch from './header-search'
 export default {
   name: 'themeHeaderBar',
   components: { themeHeaderSearch },
+  data: () => ({
+    menuOpen: false
+  }),
   computed: {
     cart() {
       return 'Cart'
@@ -53,7 +69,7 @@ export default {
 <style lang="scss">
 .header-bar {
   background-color: $color-black;
-  padding: 10px 0;
+  padding: 8px 0;
   color: $color-white;
   font-size: 1.4rem;
   font-weight: 300;
@@ -61,7 +77,7 @@ export default {
 .header-bar__container {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 4px;
   @include media-medium-up {
     flex-direction: row;
     justify-content: space-between;
@@ -71,12 +87,28 @@ export default {
 }
 .header-bar__message {
   flex-grow: 1;
+  @include media-medium-down {
+    text-align: center;
+  }
 }
 .header-bar__actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+}
+.header-bar__menu {
+  @include unset-button;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  padding: 5px 0;
+  color: $color-white;
+  text-transform: capitalize;
+}
+.header-bar__menu-icon {
+  height: 18px;
 }
 .header-bar__account {
   display: flex;
@@ -86,8 +118,10 @@ export default {
 .header-bar__cart {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   white-space: nowrap;
+  color: $color-white;
+  text-transform: capitalize;
 }
 .header-bar__cart-icon {
   height: 16px;
