@@ -1,6 +1,13 @@
 THEME
   Footer
+    social
+    newsletter
+
   Header
+    nav
+    menu
+    drawer
+
 
 PAGES
   Returns

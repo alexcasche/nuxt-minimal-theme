@@ -2,6 +2,8 @@
   <footer class="footer">
     <div class="footer__container container">
       <div class="footer__top">
+        <footer-navigation />
+        <footer-featured />
       </div>
       <div class="footer__bottom">
         <footer-legal />
@@ -12,12 +14,16 @@
 </template>
 
 <script>
+import footerNavigation from './footer-navigation'
+import footerFeatured from './footer-featured'
 import footerLegal from './footer-legal'
 import footerPayments from './footer-payments'
 
 export default {
   name: 'themeFooter',
   components: {
+    footerNavigation,
+    footerFeatured,
     footerPayments,
     footerLegal
   }
@@ -31,6 +37,17 @@ export default {
 .footer__container {
   padding-top: 30px;
   border-top: 1px solid rgba(black, 20%);
+}
+.footer__top {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 30px;
+  @include media-small-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-medium-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .footer__bottom {
   text-align: center;
