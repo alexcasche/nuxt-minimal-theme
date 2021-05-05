@@ -1,11 +1,11 @@
 <template>
-  <li class="accordion-item">
-    <div :class="['accordion-item__trigger', open ? 'is-open' : null]"
+  <li :class="['accordion-item', open ? 'is-open' : null]">
+    <div class="accordion-item__trigger"
       @click="open"
     >
       <slot name="trigger" />
     </div>
-    <transition name="accordion"
+    <transition name="accordion-item"
       @enter="start"
       @after-enter="end"
       @before-leave="start"
@@ -58,26 +58,21 @@ export default {
 </script>
 
 <style lang="scss">
-  .accordion__item {
-    cursor: pointer;
-    padding: 10px 20px 10px 40px;
-    border-bottom: 1px solid #ebebeb;
+  .accordion-item {
     position: relative;
   }
-  .accordion__trigger {
-    display: flex;
-    justify-content: space-between;
+  .accordion-item__trigger {
+    cursor: pointer;
   }
-
-  .accordion-enter-active,
-  .accordion-leave-active {
+  .accordion-item-enter-active,
+  .accordion-item-leave-active {
     will-change: height, opacity;
     transition: height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
   }
 
-  .accordion-enter,
-  .accordion-leave-to {
+  .accordion-item-enter,
+  .accordion-item-leave-to {
     height: 0 !important;
     opacity: 0;
   }

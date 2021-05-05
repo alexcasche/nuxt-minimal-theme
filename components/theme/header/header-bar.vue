@@ -4,30 +4,34 @@
       <div class="header-bar__message"
         v-html="'50% on all women\'s shoes for a limited time!'"
       />
-      <nav class="header-bar__account">
-        <nuxt-link class="header-bar__account-link"
-          to="/account/login"
-          v-html="'Log in'"
-        />
-        <span class="header-bar__account-text"
-          v-html="'or'"
-        />
-        <nuxt-link class="promo__account-link"
-          to="/account/register"
-          v-html="'Create account'"
-        />
-      </nav>
-      <nuxt-link class="header-bar__cart"
-        to="/cart"
-      >
-        <base-svg class="header-bar__cart-icon"
-          name="cart"
-        />
-        <span class="header-bar__cart-text"
-          v-html="cart"
-        />
-      </nuxt-link>
-      <theme-header-search />
+      <div class="header-bar__actions">
+        <button class="header-bar__menu">
+        </button>
+        <nav class="header-bar__account hide-medium-down">
+          <nuxt-link class="header-bar__account-link"
+            to="/account/login"
+            v-html="'Log in'"
+          />
+          <span class="header-bar__account-text"
+            v-html="'or'"
+          />
+          <nuxt-link class="promo__account-link"
+            to="/account/register"
+            v-html="'Create account'"
+          />
+        </nav>
+        <nuxt-link class="header-bar__cart"
+          to="/cart"
+        >
+          <base-svg class="header-bar__cart-icon"
+            name="cart"
+          />
+          <span class="header-bar__cart-text"
+            v-html="cart"
+          />
+        </nuxt-link>
+        <theme-header-search class="hide-medium-down" />
+      </div>
     </div>
   </header>
 </template>
@@ -56,12 +60,23 @@ export default {
 }
 .header-bar__container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 14px;
+  @include media-medium-up {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
 }
 .header-bar__message {
   flex-grow: 1;
+}
+.header-bar__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 .header-bar__account {
   display: flex;

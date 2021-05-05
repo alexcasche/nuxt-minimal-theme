@@ -1,30 +1,30 @@
 .hide-small-down {
   @include media-small-down {
-    display: none;
+    display: none !important;
   }
 }
 .hide-small-up {
   @include media-small-up {
-    display: none;
+    display: none !important;
   }
 }
 .hide-medium-down {
   @include media-medium-down {
-    display: none;
+    display: none !important;
   }
 }
 .hide-medium-up {
   @include media-medium-up {
-    display: none;
+    display: none !important;
   }
 }
 .hide-large-down {
   @include media-large-down {
-    display: none;
+    display: none !important;
   }
 }
 .hide-large-up {
   @include media-large-up {
-    display: none;
+    display: none !important;
   }
 }
