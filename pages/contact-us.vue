@@ -1,47 +1,40 @@
 <template>
   <main class="contact-page page">
     <div class="contact-page__container container-narrow">
-      <h1 class="contact-page__heading">
-        Contact Us
-      </h1>
-      <form
+      <h1 class="contact-page__heading"
+        v-html="'Contact Us'"
+      />
+      <form class="contact-page__form"
         @submit.prevent="handleSubmit"
-        class="contact-page__form"
       >
-        <base-input
+        <base-input class="contact-page__input"
           v-model="formModel.name"
           required
           type="text"
-          class="contact-page__input"
           placeholder="Name*"
         />
-        <base-input
+        <base-input class="contact-page__input"
           v-model="formModel.email"
           required
           type="email"
-          class="contact-page__input"
           placeholder="Email*"
         />
-        <base-input
+        <base-input class="contact-page__input"
           v-model="formModel.phone"
           required
           type="text"
-          class="contact-page__input"
           placeholder="Phone Number*"
         />
-        <base-textarea
+        <base-textarea class="contact-page__text-area"
           v-model="formModel.message"
           required
           row="10"
-          class="contact-page__text-area"
           placeholder="Message*"
         />
-        <base-button
+        <base-button class="contact-page__button"
           role="primary"
-          class="contact-page__button"
-        >
-          Send
-        </base-button>
+          v-html="'Send'"
+        />
       </form>
     </div>
   </main>
@@ -67,7 +60,6 @@ export default {
           \nMessage: ${this.formModel.message}
         `)
       }
-      console.log('Submit Message')
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <nav class="footer-featured">
+  <div class="footer-featured">
     <h4 class="footer-featured__heading"
       v-html="'Latest News'"
     />
@@ -10,7 +10,7 @@
     <p class="footer-featured__text"
       v-html="'After much planning, decorating, sourcing, packaging, pricing, and more, it was time to launch.'"
     />
-  </nav>
+  </div>
 </template>
 
 <script>
