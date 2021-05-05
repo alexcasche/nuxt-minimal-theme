@@ -1,0 +1,16 @@
+@mixin unset-button {
+  appearance: unset;
+  background: unset;
+  padding: unset;
+  border: unset;
+  outline: unset;
+  box-shadow: unset;
+}
+@mixin unset-input {
+  appearance: unset;
+  background: unset;
+  padding: unset;
+  border: unset;
+  outline: unset;
+  box-shadow: unset;
+}

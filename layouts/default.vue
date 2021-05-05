@@ -1,9 +1,7 @@
 <template>
   <div class="layout">
     <theme-header />
-    <main class="main">
-      <Nuxt />
-    </main>
+    <Nuxt class="nuxt" />
     <theme-footer />
   </div>
 </template>
@@ -26,7 +24,7 @@ export default {
     display: flex;
     flex-direction: column;
   }
-  .main {
+  .nuxt {
     flex-grow: 1;
   }
 </style>

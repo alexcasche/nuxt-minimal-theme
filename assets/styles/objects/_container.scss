@@ -2,5 +2,12 @@
   margin: 0 auto;
   max-width: 1220px;
   width: calc(100% - 30px);
-  @include media-medium-up { width: calc(100% - 50px); }
+  @include media-medium-up { width: calc(100% - 60px); }
+}
+
+.container-narrow {
+  margin: 0 auto;
+  max-width: 750px;
+  width: calc(100% - 30px);
+  @include media-medium-up { width: calc(100% - 60px); }
 }

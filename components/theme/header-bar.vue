@@ -33,13 +33,17 @@
           {{cart}}
         </span>
       </nuxt-link>
+      <theme-header-search />
     </div>
   </header>
 </template>
 
 <script>
+import themeHeaderSearch from './header-search'
+
 export default {
   name: 'themeHeaderBar',
+  components: { themeHeaderSearch },
   computed: {
     cart() {
       return 'Cart'
@@ -52,7 +56,7 @@ export default {
 .header-bar {
   background-color: $color-primary;
   padding: 10px 0;
-  color: white;
+  color: $color-white;
   font-size: 1.4rem;
   font-weight: 300;
 }
@@ -60,7 +64,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .header-bar__message {
   flex-grow: 1;
