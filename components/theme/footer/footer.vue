@@ -4,6 +4,8 @@
       <div class="footer__top">
         <footer-navigation />
         <footer-featured />
+        <footer-social />
+        <footer-newsletter />
       </div>
       <div class="footer__bottom">
         <footer-legal />
@@ -16,6 +18,8 @@
 <script>
 import footerNavigation from './footer-navigation'
 import footerFeatured from './footer-featured'
+import footerSocial from './footer-social'
+import footerNewsletter from './footer-newsletter'
 import footerLegal from './footer-legal'
 import footerPayments from './footer-payments'
 
@@ -24,6 +28,8 @@ export default {
   components: {
     footerNavigation,
     footerFeatured,
+    footerSocial,
+    footerNewsletter,
     footerPayments,
     footerLegal
   }
@@ -43,10 +49,10 @@ export default {
   gap: 30px;
   margin-bottom: 30px;
   @include media-small-up {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   @include media-medium-up {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 .footer__bottom {

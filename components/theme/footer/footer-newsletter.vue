@@ -1,6 +1,8 @@
 <template>
   <nav class="footer-newsletter">
-    Footer Newsletter
+    <h4 class="footer-newsletter__heading"
+      v-html="'Newsletter'"
+    />
   </nav>
 </template>
 
@@ -11,5 +13,11 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    @include media-small-down {
+      text-align: center;
+    }
+  }
 </style>

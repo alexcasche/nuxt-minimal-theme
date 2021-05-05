@@ -1,15 +1,17 @@
 <template>
-  <nav class="footer-navigaiton">
+  <div class="footer-navigaiton">
     <h4 class="footer-navigation__heading"
       v-html="'Links'"
     />
-    <base-a class="footer-navigation__link"
-      v-for="link in links"
-      :key="link.text"
-      :href="link.url"
-      v-html="link.text"
-    />
-  </nav>
+    <nav class="footer-navigation__links">
+      <base-a class="footer-navigation__link"
+        v-for="link in links"
+        :key="link.text"
+        :href="link.url"
+        v-html="link.text"
+      />
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -34,6 +36,10 @@ export default {
     @include media-small-down {
       text-align: center;
     }
+  }
+  .footer-navigation__links {
+    display: flex;
+    flex-direction: column;
   }
   .footer-navigation__link {
     font-size: 1.4rem;
