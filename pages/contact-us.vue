@@ -10,26 +10,33 @@
         <base-input class="contact-page__input"
           v-model="formModel.name"
           required
+          pattern=".*\S+.*"
           type="text"
           placeholder="Name*"
+          title="Name field cannot be empty"
         />
         <base-input class="contact-page__input"
           v-model="formModel.email"
           required
           type="email"
           placeholder="Email*"
+          title="Email field must be valid"
         />
         <base-input class="contact-page__input"
           v-model="formModel.phone"
           required
+          pattern=".*\S+.*"
           type="text"
           placeholder="Phone Number*"
+          title="Phone field cannot be empty"
         />
         <base-textarea class="contact-page__text-area"
           v-model="formModel.message"
           required
+          pattern=".*\S+.*"
           row="10"
           placeholder="Message*"
+          title="Message field cannot be empty"
         />
         <base-button class="contact-page__button"
           role="primary"

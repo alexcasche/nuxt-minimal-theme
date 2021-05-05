@@ -14,6 +14,7 @@
         required
         type="email"
         placeholder="Your email*"
+        title="Email field must be valid"
       />
       <base-button class="footer-newsletter__button"
         role="primary"
