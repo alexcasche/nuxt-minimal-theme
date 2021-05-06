@@ -36,6 +36,7 @@ export default {
     font-size: 1.8rem;
     line-height: 1.5;
     font-family: $font-body;
+    user-select: none;
   }
   .button.is-black {
     background-color: $color-black;

@@ -43,14 +43,14 @@
         </base-accordion>
       </div>
       <div class="header-menu__item">
-        <nuxt-link class="header-menu__link"
-          to="/account/login"
+        <base-a class="header-menu__link"
+          href="/account/login"
           v-html="'Log in'"
         />
       </div>
       <div class="header-menu__item">
-        <nuxt-link class="header-menu__link"
-          to="/account/register"
+        <base-a class="header-menu__link"
+          href="/account/register"
           v-html="'Create account'"
         />
       </div>

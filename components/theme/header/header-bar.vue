@@ -21,20 +21,20 @@
           />
         </button>
         <nav class="header-bar__account hide-medium-down">
-          <nuxt-link class="header-bar__account-link"
-            to="/account/login"
+          <base-a class="header-bar__account-link"
+            href="/account/login"
             v-html="'Log in'"
           />
           <span class="header-bar__account-text"
             v-html="'or'"
           />
-          <nuxt-link class="promo__account-link"
-            to="/account/register"
+          <base-a class="promo__account-link"
+            href="/account/register"
             v-html="'Create account'"
           />
         </nav>
-        <nuxt-link class="header-bar__cart"
-          to="/cart"
+        <base-a class="header-bar__cart"
+          href="/cart"
         >
           <base-svg class="header-bar__cart-icon"
             name="cart"
@@ -42,7 +42,7 @@
           <span class="header-bar__cart-text"
             v-html="cart"
           />
-        </nuxt-link>
+        </base-a>
         <theme-header-search class="hide-medium-down" />
       </div>
     </div>

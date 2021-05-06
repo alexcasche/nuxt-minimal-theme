@@ -1,9 +1,7 @@
 THEME
-  Base
-    accordion
   Header
     nav
-    menu
+      - dropdown
 
 PAGES
   Returns
