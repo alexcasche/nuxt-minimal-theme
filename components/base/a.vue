@@ -64,3 +64,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+ .a.nuxt-link-exact-active {
+   pointer-events: none;
+ }
+</style>

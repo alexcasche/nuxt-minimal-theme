@@ -4,7 +4,7 @@
       <div class="header-bar__message"
         v-html="'50% on all women\'s shoes for a limited time!'"
       />
-      <div class="header-bar__actions">
+      <div class="header-bar__actions select-none">
         <button class="header-bar__menu hide-medium-up"
           @click="menuOpen = !menuOpen"
         >
@@ -46,21 +46,33 @@
         <theme-header-search class="hide-medium-down" />
       </div>
     </div>
+    <theme-header-menu class="hide-medium-up"
+      :visible="menuOpen"
+    />
   </header>
 </template>
 
 <script>
 import themeHeaderSearch from './header-search'
+import themeHeaderMenu from './header-menu'
 
 export default {
   name: 'themeHeaderBar',
-  components: { themeHeaderSearch },
+  components: {
+    themeHeaderSearch,
+    themeHeaderMenu
+  },
   data: () => ({
     menuOpen: false
   }),
   computed: {
     cart() {
       return 'Cart'
+    }
+  },
+  watch: {
+    '$route': function() {
+      this.menuOpen = false
     }
   }
 }
@@ -69,7 +81,6 @@ export default {
 <style lang="scss">
 .header-bar {
   background-color: $color-black;
-  padding: 8px 0;
   color: $color-white;
   font-size: 1.4rem;
   font-weight: 300;
@@ -78,6 +89,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 8px 0;
   @include media-medium-up {
     flex-direction: row;
     justify-content: space-between;

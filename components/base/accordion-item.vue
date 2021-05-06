@@ -1,5 +1,7 @@
 <template>
-  <li :class="['accordion-item', open ? 'is-open' : null]">
+  <li :class="['accordion-item',
+    visible ? 'is-open' : null
+  ]">
     <div class="accordion-item__trigger"
       @click="open"
     >
