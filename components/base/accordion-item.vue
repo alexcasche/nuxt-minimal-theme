@@ -65,6 +65,7 @@ export default {
   }
   .accordion-item__trigger {
     cursor: pointer;
+    user-select: none;
   }
   .accordion-item-enter-active,
   .accordion-item-leave-active {

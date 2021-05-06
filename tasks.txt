@@ -1,15 +1,13 @@
 THEME
-  Header
-    nav
-      - dropdown
+  SETUP NACELLE SPACE
 
 PAGES
+  PDP
+  Collection
+
   Returns
   About Us
-
   Home
-  Collection
-  PDP
   Cart
   Contact
   News
