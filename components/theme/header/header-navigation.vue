@@ -17,6 +17,16 @@
           name="chevron"
         />
       </base-a>
+      <div class="header-navigation__sub-items"
+        v-if="item.links"
+      >
+        <base-a class="header-navigation__sub-item"
+          v-for="link in item.links"
+          :key="link.text"
+          :href="link.url"
+          v-html="link.text"
+        />
+      </div>
     </div>
   </nav>
 </template>
@@ -48,6 +58,9 @@ export default {
     display: flex;
     gap: 10px;
   }
+  .header-navigation__item {
+    position: relative;
+  }
   .header-navigation__link {
     display: flex;
     align-items: center;
@@ -73,5 +86,30 @@ export default {
   .header-navigation__link-icon {
     height: 14px;
     margin-left: 6px;
+  }
+  .header-navigation__sub-items {
+    visibility: hidden;
+    position: absolute;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-white;
+    border: 1px solid rgba($color-black, 4%);
+    border-top: none;
+    box-shadow: 0 1px 1px rgba($color-black, 6%);
+    .header-navigation__item:hover & {
+      visibility: visible;
+    }
+  }
+  .header-navigation__sub-item {
+    padding: 5px 15px;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    &:last-child {
+      padding-bottom: 8px;
+    }
+    &:hover {
+      color: $color-primary;
+    }
   }
 </style>

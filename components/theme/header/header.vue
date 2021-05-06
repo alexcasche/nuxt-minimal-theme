@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style lang="scss">
+  .header {
+    z-index: $z-index-header;
+  }
   .header__main {
     display: flex;
     justify-content: space-between;
