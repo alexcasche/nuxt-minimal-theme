@@ -1,6 +1,7 @@
 <template>
   <base-a class="product-card"
     v-if="product && activeVariant"
+    :href="`/products/${product.handle}`"
   >
     <p class="product-card__title"
       v-html="product.title"

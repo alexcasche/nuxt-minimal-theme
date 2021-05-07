@@ -1,4 +1,7 @@
 PAGES
+  Search
+    grid update
+
   PDP
   Collection
 
@@ -9,7 +12,7 @@ PAGES
   Contact
   News
 
-  Search
+
   Account
     Login
     Register
