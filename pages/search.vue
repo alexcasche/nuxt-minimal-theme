@@ -42,6 +42,7 @@
           </base-a>
           <div class="search-page__item-details">
             <base-a class="search-page__item-title"
+              role="primary"
               :href="`/products/${product.handle}`"
               v-html="product.title"
             />

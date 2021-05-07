@@ -1,6 +1,6 @@
 <template>
   <div class="error page">
-    <div class="error__container container-narrow">
+    <div class="error__container container-smaller">
       <h1 class="error__heading"
         v-html="'404'"
       />

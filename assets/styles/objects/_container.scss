@@ -5,9 +5,16 @@
   @include media-medium-up { width: calc(100% - 60px); }
 }
 
-.container-narrow {
+.container-smaller {
   margin: 0 auto;
   max-width: 750px;
+  width: calc(100% - 30px);
+  @include media-medium-up { width: calc(100% - 60px); }
+}
+
+.container-smallest {
+  margin: 0 auto;
+  max-width: 500px;
   width: calc(100% - 30px);
   @include media-medium-up { width: calc(100% - 60px); }
 }

@@ -1,6 +1,6 @@
 <template>
   <main class="contact-page page">
-    <div class="contact-page__container container-narrow">
+    <div class="contact-page__container container-smallest">
       <h1 class="contact-page__heading"
         v-html="'Contact Us'"
       />

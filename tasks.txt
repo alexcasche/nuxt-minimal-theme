@@ -1,7 +1,4 @@
 PAGES
-  Search
-    grid update
-
   PDP
   Collection
 
@@ -11,9 +8,3 @@ PAGES
   Cart
   Contact
   News
-
-
-  Account
-    Login
-    Register
-    Forgot

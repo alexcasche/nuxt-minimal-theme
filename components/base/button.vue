@@ -12,8 +12,8 @@ export default {
   name: 'baseButton',
   props: {
     role: {
-      type: String,
-      default: 'primary'
+      type: [String, null],
+      required: false
     },
     text: {
       type: String,

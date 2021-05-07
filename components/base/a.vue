@@ -1,5 +1,5 @@
 <template>
-  <component class="a"
+  <component :class="['a', role ? `is-${role}` : null]"
     v-if="elementTag === 'nuxt-link'"
     :is="elementTag"
     v-bind="{ ...$attrs, ...linkAttrs }"
@@ -8,7 +8,7 @@
     {{ text }}
     <slot />
   </component>
-  <component class="a"
+  <component :class="['a', role ? `is-${role}` : null]"
     v-else
     :is="elementTag"
     v-bind="{ ...$attrs, ...linkAttrs }"
@@ -23,6 +23,10 @@
 export default {
   name: 'baseA',
   props: {
+    role: {
+      type: [String, null],
+      required: false
+    },
     text: {
       type: String,
       required: false
@@ -66,7 +70,19 @@ export default {
 </script>
 
 <style lang="scss">
- .a.nuxt-link-exact-active {
-   pointer-events: none;
- }
+  .a.nuxt-link-exact-active {
+    pointer-events: none;
+  }
+  .a.is-black {
+    color: $color-black;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  .a.is-primary {
+    color: $color-primary;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
 </style>
