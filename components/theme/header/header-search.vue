@@ -28,12 +28,22 @@ export default {
       query: ''
     }
   }),
+  computed: {
+    query() {
+      if(!this._stringEmpty({ string: this.$route.query.q })) {
+        return this.$route.query.q
+      }
+    }
+  },
   methods: {
     handleSubmit() {
       if(process.browser) {
         this.$router.push(`/search?q=${this.formModel.query}`)
       }
     }
+  },
+  mounted() {
+    if(this.query) this.formModel.query = this.query
   }
 }
 </script>

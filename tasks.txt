@@ -1,6 +1,3 @@
-THEME
-  SETUP NACELLE SPACE
-
 PAGES
   PDP
   Collection

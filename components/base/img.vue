@@ -1,4 +1,5 @@
 <template>
+  <!--- use nuxt image here instead -->
   <img class="img"
     v-if="src"
     v-lazy="lazy ? srcString : null"
