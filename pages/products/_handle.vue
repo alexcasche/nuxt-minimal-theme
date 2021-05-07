@@ -4,9 +4,11 @@
       <div class="product-page__main"
         v-if="product"
       >
-        <product-gallery class="product-page__gallery"
-          :product="product"
-        />
+        <div class="product-page__media">
+          <product-slideshow class="product-page__slideshow"
+            :product="product"
+          />
+        </div>
         <div class="product-page__details">
           Details Hey Now
         </div>
@@ -16,12 +18,12 @@
 </template>
 
 <script>
-import productGallery from '~/components/product/product-gallery'
+import productSlideshow from '~/components/product/product-slideshow'
 
 export default {
   name: 'pageProduct',
   components: {
-    productGallery
+    productSlideshow
   },
   data: () => ({
     product: false,
@@ -44,3 +46,20 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .product-page__main {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    @include media-small-down {
+      flex-direction: column;
+    }
+  }
+  .product-page__media,
+  .product-page__details {
+    @include media-medium-up {
+      width: 50%;
+    }
+  }
+</style>
