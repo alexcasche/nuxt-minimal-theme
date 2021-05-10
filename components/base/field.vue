@@ -2,7 +2,7 @@
   <div class="field">
     <label class="field__label"
       v-if="label"
-      :name="name"
+      :for="name"
       v-html="label"
     />
     <slot />
@@ -28,5 +28,12 @@ export default {
 <style lang="scss">
   .field {
     margin-bottom: 20px;
+  }
+  .field__label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-transform: capitalize;
   }
 </style>

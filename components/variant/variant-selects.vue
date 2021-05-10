@@ -2,18 +2,18 @@
   <div class="variant-selects"
     v-if="product && options"
   >
-    <div class="variant-selects__option"
+    <base-field class="variant-selects__option"
       v-for="(option, index) in options"
       :key="`options-${index}`"
+      :name="`option-${index}`"
+      :label="option.name"
     >
-      <label class="variant-selects__label"
-        v-html="option.name"
-      />
       <base-select class="variant-selects__select"
+        :id="`option-${index}`"
         v-model="optionsModel[index]"
         :options="option.values"
       />
-    </div>
+    </base-field>
   </div>
 </template>
 
@@ -42,3 +42,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .variant-selects {
+    margin-bottom: 5px;
+    .field:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+</style>
