@@ -2,7 +2,7 @@
   <main class="product-page page">
     <div class="product-page__container container">
       <div class="product-page__main"
-        v-if="product && activeVariant"
+        v-if="product"
       >
         <div class="product-page__media">
           <product-slideshow class="product-page__slideshow"
@@ -16,8 +16,8 @@
           <h1 class="product-page__title"
             v-html="product.title"
           />
-          <product-prices class="product-page__prices"
-            :variant="{ ...activeVariant, compareAtPrice: 14 }"
+          <product-form class="product-page__prices"
+            :product="product"
           />
         </div>
       </div>
@@ -27,23 +27,21 @@
 
 <script>
 import productSlideshow from '~/components/product/product-slideshow'
-import productPrices from '~/components/product/product-prices'
+import productForm from '~/components/product/product-form'
 
 export default {
   name: 'pageProduct',
   components: {
     productSlideshow,
-    productPrices
+    productForm
   },
-  data: () => ({
+  data: (self = this) => ({
     product: false,
-    empty: false
-  }),
-  computed: {
-    activeVariant() {
-      return this.product.variants[0]
+    empty: false,
+    formModel: {
+      variant: false
     }
-  },
+  }),
   methods: {
     async fetchProduct() {
       this.product = await this.$nacelle.client.data.product({
@@ -83,6 +81,9 @@ export default {
   }
   .product-page__vendor {
     margin-bottom: 0;
+  }
+  .product-page__title {
+    margin-bottom: 10px;
   }
   .product-page__prices {
     font-size: 2.6rem;
