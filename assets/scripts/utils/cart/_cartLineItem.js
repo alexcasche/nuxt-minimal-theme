@@ -1,7 +1,9 @@
 export const cartLineItem = ({ product, variant, quantity, metafields }) => {
   if(product && variant) {
     return {
-      image: product.featuredMedia,
+      image: product.featuredMedia && product.featuredMedia.type === 'image'
+        ? product.featuredMedia
+        : null,
       title: product.title,
       variant: variant,
       quantity: quantity || 1,

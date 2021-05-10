@@ -23,7 +23,8 @@
     "uuid": "^8.3.2",
     "vue-lazyload": "^1.3.3",
     "vue-slick-carousel": "^1.0.6",
-    "vue-zoom-on-hover": "^1.0.5"
+    "vue-zoom-on-hover": "^1.0.5",
+    "vuex-persistedstate": "*"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^6.0.0",

@@ -70,6 +70,9 @@ export default {
 </script>
 
 <style lang="scss">
+  .a {
+    cursor: pointer;
+  }
   .a.nuxt-link-exact-active {
     pointer-events: none;
   }

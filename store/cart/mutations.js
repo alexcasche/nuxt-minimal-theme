@@ -5,9 +5,10 @@ export default {
     let lineItems = [ ...state.lineItems ]
     payload.forEach(payloadItem => {
       const cartIndex = state.lineItems.findIndex(lineItem => {
-        return payloadItem.variant.id === lineItem.variantId &&
+        return payloadItem.variant.id === lineItem.variant.id &&
           JSON.stringify(lineItem.metafields) === JSON.stringify(payloadItem.metafields)
       })
+      console.log('cartIndex', cartIndex)
       if(cartIndex >= 0) lineItems[cartIndex].quantity += payloadItem.quantity
       else lineItems.push({ ...payloadItem, id: `${payloadItem.variant.id}::${uuid()}` })
     })
