@@ -40,6 +40,7 @@ export default {
     color: $color-black;
     font-size: 1.7rem;
     font-family: $font-body;
+    cursor: pointer;
     &:hover {
       border-color: rgba($color-black, 15%)
     }

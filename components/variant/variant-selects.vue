@@ -2,11 +2,9 @@
   <div class="variant-selects"
     v-if="product && options"
   >
-    {{ activeVariant ? activeVariant.title : false }}
-    <base-field class="variant-selects__option"
+    <base-field class="variant-selects__field"
       v-for="(option, index) in options"
       :key="`options-${index}`"
-      :name="`option-${index}`"
       :label="option.name"
     >
       <base-select class="variant-selects__select"
@@ -59,9 +57,8 @@ export default {
 
 <style lang="scss">
   .variant-selects {
-    margin-bottom: 5px;
     .field:not(:last-child) {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
   }
 </style>

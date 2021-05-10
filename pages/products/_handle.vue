@@ -16,7 +16,7 @@
           <h1 class="product-page__title"
             v-html="product.title"
           />
-          <product-form class="product-page__prices"
+          <product-form class="product-page__form"
             :product="product"
           />
         </div>
@@ -84,18 +84,5 @@ export default {
   }
   .product-page__title {
     margin-bottom: 10px;
-  }
-  .product-page__prices {
-    font-size: 2.6rem;
-    font-weight: 700;
-    .product-prices__compare {
-      margin-right: 5px;
-      color: $color-urgent;
-    }
-    .product-prices__default.on-sale {
-      color: lighten($color-black, 35%);
-      font-size: 2.4rem;
-      font-size: 2.2rem;
-    }
   }
 </style>

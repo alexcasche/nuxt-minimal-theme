@@ -2,10 +2,13 @@
   <div class="field">
     <label class="field__label"
       v-if="label"
-      :for="name"
-      v-html="label"
-    />
-    <slot />
+    >
+      <span class="field__label-text"
+        v-html="label"
+      />
+      <slot />
+    </label>
+    <slot v-else />
   </div>
 </template>
 
@@ -29,8 +32,8 @@ export default {
   .field {
     margin-bottom: 20px;
   }
-  .field__label {
-    display: inline-block;
+  .field__label-text {
+    display: block;
     margin-bottom: 0.5rem;
     font-size: 1.7rem;
     font-weight: 400;
