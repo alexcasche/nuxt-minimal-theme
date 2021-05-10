@@ -7,37 +7,45 @@
       <form class="register-page__form"
         @submit.prevent="handleSubmit"
       >
-        <base-input class="register-page__input"
-          v-model="formModel.firstName"
-          required
-          pattern=".*\S+.*"
-          type="text"
-          placeholder="First Name*"
-          title="First name field cannot be empty"
-        />
-        <base-input class="register-page__input"
-          v-model="formModel.lastName"
-          required
-          pattern=".*\S+.*"
-          type="text"
-          placeholder="Last Name*"
-          title="Last name field cannot be empty"
-        />
-        <base-input class="register-page__input"
-          v-model="formModel.email"
-          required
-          type="email"
-          placeholder="Email*"
-          title="Email field must be valid"
-        />
-        <base-input class="register-page__input"
-          v-model="formModel.password"
-          required
-          pattern=".*\S+.*"
-          type="password"
-          placeholder="Password*"
-          title="Password field cannot be empty"
-        />
+        <base-field class="register-page__field">
+          <base-input class="register-page__input"
+            v-model="formModel.firstName"
+            required
+            pattern=".*\S+.*"
+            type="text"
+            placeholder="First Name*"
+            title="First name field cannot be empty"
+          />
+        </base-field>
+        <base-field class="register-page__field">
+          <base-input class="register-page__input"
+            v-model="formModel.lastName"
+            required
+            pattern=".*\S+.*"
+            type="text"
+            placeholder="Last Name*"
+            title="Last name field cannot be empty"
+          />
+        </base-field>
+        <base-field class="register-page__field">
+          <base-input class="register-page__input"
+            v-model="formModel.email"
+            required
+            type="email"
+            placeholder="Email*"
+            title="Email field must be valid"
+          />
+        </base-field>
+        <base-field class="register-page__field">
+          <base-input class="register-page__input"
+            v-model="formModel.password"
+            required
+            pattern=".*\S+.*"
+            type="password"
+            placeholder="Password*"
+            title="Password field cannot be empty"
+          />
+        </base-field>
         <div class="register-page__actions">
           <base-button class="register-page__button"
             role="primary"
@@ -81,10 +89,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .register-page__input,
-  .register-page__text-area {
-    margin-bottom: 20px;
-  }
   .register-page__actions {
     display: flex;
     flex-direction: column;

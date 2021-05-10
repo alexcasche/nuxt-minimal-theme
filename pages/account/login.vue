@@ -7,21 +7,25 @@
       <form class="login-page__form"
         @submit.prevent="handleSubmit"
       >
-        <base-input class="login-page__input"
-          v-model="formModel.email"
-          required
-          type="email"
-          placeholder="Email*"
-          title="Email field must be valid"
-        />
-        <base-input class="login-page__input"
-          v-model="formModel.password"
-          required
-          pattern=".*\S+.*"
-          type="password"
-          placeholder="Password*"
-          title="Password field cannot be empty"
-        />
+        <base-field class="login-page__field">
+          <base-input class="login-page__input"
+            v-model="formModel.email"
+            required
+            type="email"
+            placeholder="Email*"
+            title="Email field must be valid"
+          />
+        </base-field>
+        <base-field class="login-page__field">
+          <base-input class="login-page__input"
+            v-model="formModel.password"
+            required
+            pattern=".*\S+.*"
+            type="password"
+            placeholder="Password*"
+            title="Password field cannot be empty"
+          />
+        </base-field>
         <div class="login-page__actions">
           <base-a class="login-page__link"
             role="primary"
@@ -66,10 +70,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .login-page__input,
-  .login-page__text-area {
-    margin-bottom: 20px;
-  }
   .login-page__actions {
     display: flex;
     flex-direction: column;

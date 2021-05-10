@@ -10,13 +10,15 @@
       <form class="recover-page__form"
         @submit.prevent="handleSubmit"
       >
-        <base-input class="recover-page__input"
-          v-model="formModel.email"
-          required
-          type="email"
-          placeholder="Email*"
-          title="Email field must be valid"
-        />
+        <base-field class="recover-page__field">
+          <base-input class="recover-page__input"
+            v-model="formModel.email"
+            required
+            type="email"
+            placeholder="Email*"
+            title="Email field must be valid"
+          />
+        </base-field>
         <div class="recover-page__actions">
           <base-button class="recover-page__button"
             role="primary"
@@ -56,10 +58,6 @@ export default {
 <style lang="scss">
   .recover-page__text {
     margin-bottom: 30px;
-  }
-  .recover-page__input,
-  .recover-page__text-area {
-    margin-bottom: 20px;
   }
   .recover-page__actions {
     display: flex;

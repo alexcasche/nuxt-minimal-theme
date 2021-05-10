@@ -7,37 +7,45 @@
       <form class="contact-page__form"
         @submit.prevent="handleSubmit"
       >
-        <base-input class="contact-page__input"
-          v-model="formModel.name"
-          required
-          pattern=".*\S+.*"
-          type="text"
-          placeholder="Name*"
-          title="Name field cannot be empty"
-        />
-        <base-input class="contact-page__input"
-          v-model="formModel.email"
-          required
-          type="email"
-          placeholder="Email*"
-          title="Email field must be valid"
-        />
-        <base-input class="contact-page__input"
-          v-model="formModel.phone"
-          required
-          pattern=".*\S+.*"
-          type="text"
-          placeholder="Phone Number*"
-          title="Phone field cannot be empty"
-        />
-        <base-textarea class="contact-page__text-area"
-          v-model="formModel.message"
-          required
-          pattern=".*\S+.*"
-          row="10"
-          placeholder="Message*"
-          title="Message field cannot be empty"
-        />
+        <base-field class="contact-page__field">
+          <base-input class="contact-page__input"
+            v-model="formModel.name"
+            required
+            pattern=".*\S+.*"
+            type="text"
+            placeholder="Name*"
+            title="Name field cannot be empty"
+          />
+        </base-field>
+        <base-field class="contact-page__field">
+          <base-input class="contact-page__input"
+            v-model="formModel.email"
+            required
+            type="email"
+            placeholder="Email*"
+            title="Email field must be valid"
+          />
+        </base-field>
+        <base-field class="contact-page__field">
+          <base-input class="contact-page__input"
+            v-model="formModel.phone"
+            required
+            pattern=".*\S+.*"
+            type="text"
+            placeholder="Phone Number*"
+            title="Phone field cannot be empty"
+          />
+        </base-field>
+        <base-field class="contact-page__field">
+          <base-textarea class="contact-page__text-area"
+            v-model="formModel.message"
+            required
+            pattern=".*\S+.*"
+            row="10"
+            placeholder="Message*"
+            title="Message field cannot be empty"
+          />
+        </base-field>
         <base-button class="contact-page__button"
           role="primary"
           v-html="'Send'"
@@ -74,10 +82,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .contact-page__input,
-  .contact-page__text-area {
-    margin-bottom: 20px;
-  }
   .contact-page__button {
     margin-left: auto;
     float: right;

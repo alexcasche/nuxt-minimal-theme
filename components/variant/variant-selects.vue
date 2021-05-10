@@ -1,19 +1,44 @@
 <template>
-  <div class="variant-selects">
-    <base-select class="variant-selects__select"
-      v-model="testModel"
-      :options="[
-        'test', 'test2', 'test3'
-      ]"
-    />
+  <div class="variant-selects"
+    v-if="product && options"
+  >
+    <div class="variant-selects__option"
+      v-for="(option, index) in options"
+      :key="`options-${index}`"
+    >
+      <label class="variant-selects__label"
+        v-html="option.name"
+      />
+      <base-select class="variant-selects__select"
+        v-model="optionsModel[index]"
+        :options="option.values"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import { productOptions } from '~/assets/scripts/utils'
+
 export default {
   name: 'variantSelects',
+  props: {
+    product: {
+      type: Object,
+      required: true
+    },
+    variant: {
+      type: [Object, null],
+      required: false
+    }
+  },
   data: () => ({
-    testModel: ''
-  })
+    optionsModel: []
+  }),
+  computed: {
+    options() {
+      return productOptions({ product: this.product })
+    }
+  }
 }
 </script>

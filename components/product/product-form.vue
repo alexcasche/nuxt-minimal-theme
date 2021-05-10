@@ -3,10 +3,12 @@
     v-if="product"
     @submit.prevent="handleSubmit"
   >
+    {{ product.variants.length }}
     <product-prices class="product-form__prices"
       :variant="formModel.variant"
     />
     <variant-selects class="product-form__variants"
+      :product="product"
       :variant="formModel.variant"
     />
   </form>
