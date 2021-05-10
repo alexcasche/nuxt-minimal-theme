@@ -28,7 +28,7 @@
         :key="`image.id-${index}`"
         @click="active = index"
       >
-        <base-img class="slideshow__thumbnail"
+        <base-img class="slideshow__thumbnail-image"
           :src="image.src"
           :alt="image.alt"
           :widths="[50, 150]"
@@ -68,16 +68,30 @@ export default {
   }
   .slideshow__slide {
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
-    z-index: 0;
     &.is-active {
       position: relative;
       z-index: 1;
     }
   }
+  .slideshow__thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .slideshow__thumbnail {
+    @include unset-button;
+    width: calc(100% / 3);
+    max-width: 100px;
+  }
+  .slideshow__thumbnail-image {
+    width: 100%;
+  }
   .slideshow-enter-active, .slideshow-leave-active {
-    transition: opacity .35s ease-in-out;
+    transition: opacity 0.35s ease-in-out;
   }
   .slideshow-enter, .slideshow-leave-to {
     opacity: 0;

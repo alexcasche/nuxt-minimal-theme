@@ -6,7 +6,9 @@
       v-if="activeVariant.compareAtPrice"
       v-html="_formatPrice({ price: activeVariant.compareAtPrice })"
     />
-    <strong class="product-prices__default"
+    <strong :class="['product-prices__default',
+        activeVariant.compareAtPrice ? 'on-sale' : null
+      ]"
       v-if="activeVariant.price"
       v-html="_formatPrice({ price: activeVariant.price })"
     />
@@ -34,3 +36,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  .product-prices__default {
+    &.on-sale {
+      text-decoration: line-through;
+    }
+  }
+</style>

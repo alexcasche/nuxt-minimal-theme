@@ -162,7 +162,10 @@ export default {
     .product-prices__default {
       color: $color-black;
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
+    }
+    .product-prices__default.on-sale {
+      font-size: 1.5rem;
     }
   }
   .search-page__item-description {
