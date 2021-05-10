@@ -30,18 +30,34 @@
       </div>
     </div>
     <div class="cart-item__summary">
-      <div class="cart-item__summary-value"
-        v-html="_formatPrice({ price: item.variant.price })"
-      />
-      <variant-quantity class="cart-item__summary-value"
-        :variant="item.variant"
-        :value="item.quantity"
-        @input="handleQuantity"
-      />
-      <div class="cart-item__summary-value"
-         v-html="_formatPrice({ price: (item.quantity * item.variant.price) })"
-      />
+      <div class="cart-item__summary-item">
+        <label class="cart-item__summary-label hide-medium-up"
+          v-html="'Price'"
+        />
+        <div class="cart-item__summary-value"
+          v-html="_formatPrice({ price: item.variant.price })"
+        />
+      </div>
+      <div class="cart-item__summary-item">
+        <label class="cart-item__summary-label hide-medium-up"
+          v-html="'Quantity'"
+        />
+        <variant-quantity class="cart-item__summary-value"
+          :variant="item.variant"
+          :value="item.quantity"
+          @input="handleQuantity"
+        />
+      </div>
+      <div class="cart-item__summary-item">
+        <label class="cart-item__summary-label hide-medium-up"
+          v-html="'Total'"
+        />
+        <div class="cart-item__summary-value"
+          v-html="_formatPrice({ price: (item.quantity * item.variant.price) })"
+        />
+      </div>
     </div>
+
   </div>
 </template>
 
@@ -80,14 +96,21 @@ export default {
 
 <style lang="scss">
   .cart-item {
-    display: flex;
     margin-top: 30px;
     padding-top: 30px;
     border-top: 1px solid rgba($color-black, 20%);
+    @include media-medium-up {
+      display: flex;
+    }
   }
   .cart-item__main {
     display: flex;
-    width: 50%;
+    @include media-medium-down {
+      margin-bottom: 20px;
+    }
+    @include media-medium-up {
+      width: 50%;
+    }
   }
   .cart-item__media {
     width: 33%;
@@ -109,24 +132,43 @@ export default {
   }
   .cart-item__summary {
     display: flex;
-    justify-content: flex-end;
-    width: 50%;
-    margin-left: auto;
+    @include media-medium-down {
+      justify-content: space-between;
+      gap: 20px;
+    }
+    @include media-medium-up {
+      width: 50%;
+      justify-content: flex-end;
+      margin-left: auto;
+    }
   }
-  .cart-item__summary-value {
-    width: 25%;
-    padding-left: 10px;
-    text-align: right;
+  .cart-item__summary-item {
     color: $color-black;
     font-size: 1.7rem;
     font-weight: 700;
     text-transform: capitalize;
-    &:first-child { width: 50%; }
     .field__label-text {
       display: none;
     }
     .variant-quantity__input {
       max-width: 60px;
     }
+    @include media-medium-down {
+      text-align: center;
+      &:first-child { text-align: left; }
+      &:last-child { text-align: right; }
+    }
+    @include media-medium-up {
+      width: 25%;
+      padding-left: 10px;
+      text-align: right;
+      &:first-child { width: 50%; }
+    }
+  }
+  .cart-item__summary-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
   }
 </style>
