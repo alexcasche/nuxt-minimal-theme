@@ -3,6 +3,7 @@
     role="primary"
     design="hollow"
     v-html="'Add To Cart'"
+    @click="$emit('click')"
   />
 </template>
 

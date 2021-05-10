@@ -27,6 +27,9 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+import { cartLineItem } from '~/assets/scripts/utils'
+
 import productPrices from '~/components/product/product-prices'
 import variantSelects from '~/components/variant/variant-selects'
 import variantQuantity from '~/components/variant/variant-quantity'
@@ -53,8 +56,10 @@ export default {
     }
   }),
   methods: {
+    ...mapMutations('cart', ['CART_ADD_ITEMS']),
     handleAdd() {
-      console.log('handle add')
+      const lineItem = cartLineItem({ product: this.product, ...this.formModel })
+      if(lineItem) this.CART_ADD_ITEMS([ lineItem ])
     },
     handleBuy() {
       console.log('handle buy')

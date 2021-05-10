@@ -2,6 +2,7 @@
   <base-button class="variant-button-buy"
     role="primary"
     v-html="'Buy It Now'"
+    @click="$emit('click')"
   />
 </template>
 

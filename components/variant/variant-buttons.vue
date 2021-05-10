@@ -4,13 +4,13 @@
       :product="product"
       :variant="variant"
       :quantity="quantity || 1"
-      @click.native="$emit('add')"
+      @click="$emit('add')"
     />
     <variant-button-buy class="variant-buttons__buy"
       :product="product"
       :variant="variant"
       :quantity="quantity || 1"
-      @click.native="$emit('buy')"
+      @click="$emit('buy')"
     />
   </div>
 </template>

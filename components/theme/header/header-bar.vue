@@ -53,6 +53,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import themeHeaderSearch from './header-search'
 import themeHeaderMenu from './header-menu'
 
@@ -66,7 +68,9 @@ export default {
     menuOpen: false
   }),
   computed: {
+    ...mapGetters('cart', ['cartCount']),
     cart() {
+      if(this.cartCount) return `Cart: ${this.cartCount}`
       return 'Cart'
     }
   },
