@@ -42,7 +42,7 @@ export default {
 }
 .footer__container {
   padding-top: 30px;
-  border-top: 1px solid rgba(black, 20%);
+  border-top: 1px solid rgba($color-black, 20%);
 }
 .footer__top {
   display: grid;

@@ -10,6 +10,7 @@
       <base-select class="variant-selects__select"
         :id="`option-${index}`"
         v-model="optionsModel[index]"
+        v-bind="$attrs"
         :options="option.values"
       />
     </base-field>

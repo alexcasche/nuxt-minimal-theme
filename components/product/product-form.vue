@@ -13,11 +13,9 @@
     />
     <variant-quantity class="product-form__quantity"
       v-model="formModel.quantity"
-      :product="product"
       :variant="formModel.variant"
     />
     <variant-buttons class="product-form__buttons"
-      :product="product"
       :variant="formModel.variant"
       :quantity="formModel.quantity"
       @add="handleAdd"

@@ -1,12 +1,13 @@
 <template>
   <div class="variant-quantity"
-    v-if="product"
+    v-if="variant"
   >
     <base-field class="variant-quantity__field"
       label="Quantity"
     >
-      <base-quantity class="variant-selects"
+      <base-quantity class="variant-quantity__input"
         v-model="quantityModel"
+        v-bind="$attrs"
         :min="1"
         :max="10"
       />
@@ -17,17 +18,13 @@
 <script>
 export default {
   props: {
-    product: {
+    variant: {
       type: Object,
       required: true
     },
-    variant: {
-      type: [Object, null],
-      required: false
-    },
   },
-  data: () => ({
-    quantityModel: 1
+  data: (self = this) => ({
+    quantityModel: self.$attrs.value || 1
   }),
   watch: {
     quantityModel: function(val) {

@@ -58,8 +58,9 @@ export default {
     margin-left: auto;
   }
   .cart-page__header-label {
-    text-align: right;
     width: 25%;
+    padding-left: 10px;
+    text-align: right;
     color: $color-black;
     font-size: 1.7rem;
     font-weight: 700;

@@ -1,5 +1,6 @@
 <template>
   <base-button class="variant-button-buy"
+    v-if="variant"
     role="primary"
     v-html="'Buy It Now'"
     @click="$emit('click')"
@@ -10,13 +11,9 @@
 export default {
   name: 'variantButtonBuy',
   props: {
-    product: {
+    variant: {
       type: Object,
       required: true
-    },
-    variant: {
-      type: [Object, null],
-      required: false
     },
     quantity: {
       type: [Number, null],

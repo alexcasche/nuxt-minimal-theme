@@ -1,13 +1,13 @@
 <template>
-  <div class="variant-buttons">
+  <div class="variant-buttons"
+    v-if="variant"
+  >
     <variant-button-add class="variant-buttons__add"
-      :product="product"
       :variant="variant"
       :quantity="quantity || 1"
       @click="$emit('add')"
     />
     <variant-button-buy class="variant-buttons__buy"
-      :product="product"
       :variant="variant"
       :quantity="quantity || 1"
       @click="$emit('buy')"
@@ -22,13 +22,9 @@ import variantButtonBuy from './variant-button-buy'
 export default {
   name: 'variantButtons',
   props: {
-    product: {
+    variant: {
       type: Object,
       required: true
-    },
-    variant: {
-      type: [Object, null],
-      required: false
     },
     quantity: {
       type: [Number, null],

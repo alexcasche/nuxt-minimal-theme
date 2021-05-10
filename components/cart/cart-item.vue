@@ -29,11 +29,26 @@
         />
       </div>
     </div>
+    <div class="cart-item__summary">
+      <div class="cart-item__summary-value"
+        v-html="_formatPrice({ price: item.variant.price })"
+      />
+      <variant-quantity class="cart-item__summary-value"
+        :variant="item.variant"
+        :value="item.quantity"
+        @input="handleQuantity"
+      />
+      <div class="cart-item__summary-value"
+         v-html="_formatPrice({ price: (item.quantity * item.variant.price) })"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
+
+import variantQuantity from '~/components/variant/variant-quantity'
 
 export default {
   name: 'cartItem',
@@ -43,10 +58,21 @@ export default {
       required: true
     }
   },
+  components: {
+    variantQuantity
+  },
   methods: {
-    ...mapMutations('cart', ['CART_REMOVE_ITEMS']),
+    ...mapMutations('cart', [
+      'CART_REMOVE_ITEMS',
+      'CART_UPDATE_ITEMS'
+    ]),
     handleRemove() {
       return this.CART_REMOVE_ITEMS([{ id: this.item.id }])
+    },
+    handleQuantity(val) {
+      return this.CART_UPDATE_ITEMS([{
+        ...this.item, quantity: val
+      }])
     }
   }
 }
@@ -55,6 +81,9 @@ export default {
 <style lang="scss">
   .cart-item {
     display: flex;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba($color-black, 20%);
   }
   .cart-item__main {
     display: flex;
@@ -67,13 +96,37 @@ export default {
   .cart-item__details {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     padding-left: 30px;
   }
   .cart-item__title {
     font-size: 1.7rem;
     font-weight: 700;
   }
-  .cart-item__quantity {
+  .cart-item__quantity,
+  .cart-item__remove {
     font-size: 1.5rem;
+  }
+  .cart-item__summary {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin-left: auto;
+  }
+  .cart-item__summary-value {
+    width: 25%;
+    padding-left: 10px;
+    text-align: right;
+    color: $color-black;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    &:first-child { width: 50%; }
+    .field__label-text {
+      display: none;
+    }
+    .variant-quantity__input {
+      max-width: 60px;
+    }
   }
 </style>

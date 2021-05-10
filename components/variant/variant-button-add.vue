@@ -1,5 +1,6 @@
 <template>
   <base-button class="variant-button-add"
+    v-if="variant"
     role="primary"
     design="hollow"
     v-html="'Add To Cart'"
@@ -11,13 +12,9 @@
 export default {
   name: 'variantButtonAdd',
   props: {
-    product: {
+    variant: {
       type: Object,
       required: true
-    },
-    variant: {
-      type: [Object, null],
-      required: false
     },
     quantity: {
       type: [Number, null],
