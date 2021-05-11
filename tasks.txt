@@ -4,14 +4,14 @@ PARTS
   breadcrumbs
     - previous previous route for products (to keep collection)
   socialShare
+    - pull from fcts repo
 
 PAGES
   PDP
-    - description
-    - general info
     - share
     - recommended
 
   Home
+
   News (blog)
   Blog Post
