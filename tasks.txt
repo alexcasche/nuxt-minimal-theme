@@ -6,14 +6,12 @@ PARTS
   socialShare
 
 PAGES
-  COLLECTION
   PDP
     - description
     - general info
     - share
     - recommended
 
-  Returns
   About Us
   News (blog)
   Blog Post

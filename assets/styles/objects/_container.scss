@@ -14,7 +14,7 @@
 
 .container-smallest {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
   width: calc(100% - 30px);
   @include media-medium-up { width: calc(100% - 60px); }
 }
