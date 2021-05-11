@@ -12,6 +12,10 @@ PAGES
     - recommended
 
   Home
+    - hero
+      - mobile (linked carousel)
+    - grid-featured
+    - row-featured
 
   News (blog)
   Blog Post
