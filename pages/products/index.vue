@@ -10,12 +10,15 @@
             v-html="'All Products'"
           />
           <product-filter class="products-page__filter"
+            v-model="filterModel"
             :products="products"
           />
-          <product-sort class="products-page__sort" />
+          <product-sort class="products-page__sort"
+            v-model="sortModel"
+          />
         </div>
         <product-grid class="products-page__grid"
-          :products="products"
+          :products="activeProducts"
         />
       </div>
     </div>
@@ -23,6 +26,8 @@
 </template>
 
 <script>
+import { productFilterBy, productSortBy } from '~/assets/scripts/utils'
+
 import partBreadcrumbs from '~/components/parts/breadcrumbs'
 import productFilter from '~/components/product/product-filter'
 import productSort from '~/components/product/product-sort'
@@ -38,11 +43,15 @@ export default {
   },
   data: () => ({
     products: false,
-    empty: false
+    activeProducts: false,
+    empty: false,
+    filterModel: '',
+    sortModel: ''
   }),
   methods: {
     async fetchProducts() {
       this.products = await this.$nacelle.client.data.allProducts()
+      this.activeProducts = this.products
     }
   },
   async fetch() {
@@ -51,6 +60,14 @@ export default {
     }
     catch(err) {
       this.empty = true
+    }
+  },
+  watch: {
+    filterModel: function(val) {
+      this.activeProducts = productFilterBy({
+        products: this.products,
+        filterBy: val
+      })
     }
   }
 }

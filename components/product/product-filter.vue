@@ -44,6 +44,11 @@ export default {
         return options
       }
     }
+  },
+  watch: {
+    filterModel: function(val) {
+      this.$emit('input', val)
+    }
   }
 }
 </script>

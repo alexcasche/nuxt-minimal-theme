@@ -19,15 +19,20 @@ export default {
   computed: {
     options() {
       return [
-        { value: 'featured', text: 'Featured' },
-        { value: 'best-selling', text: 'Best Selling' },
-        { value: 'title-asc', text: 'Alphabetically, A-Z' },
-        { value: 'title-desc', text: 'Alphabetically, Z-A' },
-        { value: 'title-asc', text: 'Price, Low-High' },
-        { value: 'title-desc', text: 'Price, High-Low' },
-        { value: 'title-asc', text: 'Date, Old-New' },
-        { value: 'title-desc', text: 'Date, New-Old' }
+        { value: 'Sort:Featured', text: 'Featured' },
+        { value: 'Sort:Best-Selling', text: 'Best Selling' },
+        { value: 'Sort:Title-Asc', text: 'Alphabetically, A-Z' },
+        { value: 'Sort:Title-Desc', text: 'Alphabetically, Z-A' },
+        { value: 'Sort:Price-Asc', text: 'Price, Low-High' },
+        { value: 'Sort:Price-Desc', text: 'Price, High-Low' },
+        { value: 'Sort:Date-Asc', text: 'Date, Old-New' },
+        { value: 'Sort:Date-Desc', text: 'Date, New-Old' }
       ]
+    }
+  },
+   watch: {
+    sortModel: function(val) {
+      this.$emit('input', val)
     }
   }
 }
