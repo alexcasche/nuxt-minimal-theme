@@ -37,17 +37,17 @@ export default {
   data: () => ({
     items: [
       { text: 'Home', url: '/' },
-      { text: 'Womens', url: '/collections/womens', links: [
-        { text: 'Jewelry', url: '/collections/womens-jewelry' },
-        { text: 'Shoes', url: '/collections/womens-shoes' },
-        { text: 'Tops', url: '/collections/womens-tops' }
+      { text: 'Womens', url: '/collections/all', links: [
+        { text: 'Jewelry', url: '/collections/all' },
+        { text: 'Shoes', url: '/collections/all' },
+        { text: 'Tops', url: '/collections/all' }
       ]},
-      { text: 'Mens', url: '/collections/mens', links: [
-        { text: 'Shirts', url: '/collections/mens-shirts' },
-        { text: 'Knits', url: '/collections/mens-knits' },
-        { text: 'Outerwear', url: '/collections/mens-outerwear' }
+      { text: 'Mens', url: '/collections/all', links: [
+        { text: 'Shirts', url: '/collections/all' },
+        { text: 'Knits', url: '/collections/all' },
+        { text: 'Outerwear', url: '/collections/all' }
       ]},
-      { text: 'Accessories', url: '/collections/accessories' }
+      { text: 'Accessories', url: '/collections/all' }
     ]
   })
 }
