@@ -45,5 +45,8 @@ export default {
     a:hover {
       color: $color-primary;
     }
+    img {
+      margin: 40px 0;
+    }
   }
 </style>

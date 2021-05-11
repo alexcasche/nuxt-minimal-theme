@@ -17,7 +17,7 @@ export default {
   name: 'pageReturnPolicy',
   data: () => ({
     body: `
-      <h3>Return Policy</h3>
+      <h3>Returns</h3>
       <p>Our policy lasts 30 days. If 30 days have gone by since your purchase, unfortunately we can’t offer you a refund or exchange.</p>
       <p>To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging.</p>
       <p>Several types of goods are exempt from being returned. Perishable goods such as food, flowers, newspapers or magazines cannot be returned. We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.</p>
