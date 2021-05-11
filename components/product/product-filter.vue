@@ -40,7 +40,7 @@ export default {
           value: filter,
           text: filter.toLowerCase().replace('filter:', '')
         }))
-        options.unshift({ value: null, text: 'All' })
+        options.unshift({ value: null, text: 'all' })
         return options
       }
     }

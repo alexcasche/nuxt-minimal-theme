@@ -5,9 +5,9 @@
   >
     <option v-for="(option, index) in options"
       :key="`option-${index}`"
-      :value="option.value || option"
+      :value="typeof option === 'object' ? option.value : option"
       :selected="option.value === $attrs.value || option === $attrs.value"
-      v-html="option.text || option"
+      v-html="typeof option === 'object' ? option.text : option"
     />
   </select>
 </template>

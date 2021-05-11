@@ -19,8 +19,7 @@ export default {
   computed: {
     options() {
       return [
-        { value: 'Sort:Featured', text: 'Featured' },
-        { value: 'Sort:Best-Selling', text: 'Best Selling' },
+        { value: null, text: 'Featured' },
         { value: 'Sort:Title-Asc', text: 'Alphabetically, A-Z' },
         { value: 'Sort:Title-Desc', text: 'Alphabetically, Z-A' },
         { value: 'Sort:Price-Asc', text: 'Price, Low-High' },

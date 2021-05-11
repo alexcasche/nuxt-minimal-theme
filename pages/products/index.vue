@@ -45,8 +45,8 @@ export default {
     products: false,
     activeProducts: false,
     empty: false,
-    filterModel: '',
-    sortModel: ''
+    filterModel: null,
+    sortModel: null
   }),
   methods: {
     async fetchProducts() {
@@ -67,6 +67,12 @@ export default {
       this.activeProducts = productFilterBy({
         products: this.products,
         filterBy: val
+      })
+    },
+    sortModel: function(val) {
+      this.activeProducts = productSortBy({
+        products: this.products,
+        sortBy: val
       })
     }
   }
