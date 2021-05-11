@@ -9,8 +9,7 @@ export default {
   cartSubtotal: state => {
     if(state.lineItems.length < 1) return 0
     return state.lineItems.reduce((subtotal, lineItem) => {
-        subtotal += lineItem.variant.price * lineItem.quantity,
-      0
-    })
+        return subtotal += lineItem.variant.price * lineItem.quantity
+    }, 0)
   }
 }
