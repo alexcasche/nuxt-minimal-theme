@@ -1,15 +1,15 @@
 <template>
-  <div>
-    <base-accordion>
-      <base-accordion-item>
-        <div slot="trigger">Trigger1</div>
-        <div slot="content">Content1</div>
-      </base-accordion-item>
-      <base-accordion-item>
-        <div slot="trigger">Trigger2</div>
-        <div slot="content">Content2</div>
-      </base-accordion-item>
-    </base-accordion>
+  <div class="home-page page">
+    <div class="home-page__container container">
+      <base-tabs>
+        <base-tabs-item title="Tab 1 Trigger">
+          Tab 1 Content
+        </base-tabs-item>
+        <base-tabs-item title="Tab 2 Trigger">
+          Tab 2 Content
+        </base-tabs-item>
+      </base-tabs>
+    </div>
   </div>
 </template>
 

@@ -12,7 +12,6 @@ PAGES
     - share
     - recommended
 
-  About Us
+  Home
   News (blog)
   Blog Post
-  Home
