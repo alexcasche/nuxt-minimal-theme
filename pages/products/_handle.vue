@@ -1,24 +1,27 @@
 <template>
   <main class="product-page page">
     <div class="product-page__container container">
-      <div class="product-page__main"
+      <div class="product-page__content"
         v-if="product"
       >
-        <div class="product-page__media">
-          <product-slideshow class="product-page__slideshow"
-            :product="product"
-          />
-        </div>
-        <div class="product-page__details">
-          <h3 class="product-page__vendor"
-            v-html="product.vendor"
-          />
-          <h1 class="product-page__title"
-            v-html="product.title"
-          />
-          <product-form class="product-page__form"
-            :product="product"
-          />
+        <part-breadcrumbs class="prduct-page__breadcrumbs" />
+        <div class="product-page__main">
+          <div class="product-page__media">
+            <product-slideshow class="product-page__slideshow"
+              :product="product"
+            />
+          </div>
+          <div class="product-page__details">
+            <h3 class="product-page__vendor"
+              v-html="product.vendor"
+            />
+            <h1 class="product-page__title"
+              v-html="product.title"
+            />
+            <product-form class="product-page__form"
+              :product="product"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -26,12 +29,14 @@
 </template>
 
 <script>
+import partBreadcrumbs from '~/components/parts/breadcrumbs'
 import productSlideshow from '~/components/product/product-slideshow'
 import productForm from '~/components/product/product-form'
 
 export default {
   name: 'pageProduct',
   components: {
+    partBreadcrumbs,
     productSlideshow,
     productForm
   },

@@ -107,6 +107,9 @@ export default {
     font-style: italic;
   }
   .cart-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 20px;
   }
 </style>

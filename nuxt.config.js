@@ -12,6 +12,7 @@ export default {
   nacelle: nuxtConfig.nacelle,
   plugins: nuxtConfig.plugins,
   pwa: nuxtConfig.pwa,
+  router: nuxtConfig.router,
   sitemap: nuxtConfig.sitemap,
   srcDir: resolve('./'),
   styleResources: { scss: ['~/assets/styles/helpers.scss'] },

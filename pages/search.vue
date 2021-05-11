@@ -23,38 +23,40 @@
           />
         </base-button>
       </form>
-      <div class="search-page__results"
-        v-if="results"
-      >
-        <div class="search-page__item"
-          v-for="product in results"
-          :key="product.id"
+      <client-only>
+        <div class="search-page__results"
+          v-if="results"
         >
-          <base-a class="search-page__item-media"
-            :href="`/products/${product.handle}`"
+          <div class="search-page__item"
+            v-for="product in results"
+            :key="product.id"
           >
-            <base-img class="search-page__item-image"
-              v-if="product.featuredMedia && product.featuredMedia.type === 'image'"
-              :src="product.featuredMedia.src"
-              :alt="product.featuredMedia.alt"
-              :widths="[50, 150, 300, 600]"
-            />
-          </base-a>
-          <div class="search-page__item-details">
-            <base-a class="search-page__item-title"
-              role="primary"
+            <base-a class="search-page__item-media"
               :href="`/products/${product.handle}`"
-              v-html="product.title"
-            />
-            <product-prices class="search-page__item-prices"
-              :variant="product.variants[0]"
-            />
-            <p class="search-page__item-description"
-              v-html="product.description"
-            />
+            >
+              <base-img class="search-page__item-image"
+                v-if="product.featuredMedia && product.featuredMedia.type === 'image'"
+                :src="product.featuredMedia.src"
+                :alt="product.featuredMedia.alt"
+                :widths="[50, 150, 300, 600]"
+              />
+            </base-a>
+            <div class="search-page__item-details">
+              <base-a class="search-page__item-title"
+                role="primary"
+                :href="`/products/${product.handle}`"
+                v-html="product.title"
+              />
+              <product-prices class="search-page__item-prices"
+                :variant="product.variants[0]"
+              />
+              <p class="search-page__item-description"
+                v-html="product.description"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </client-only>
     </div>
   </main>
 </template>

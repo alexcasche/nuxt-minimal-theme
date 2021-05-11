@@ -1,12 +1,8 @@
-STORE
-  - cart
-
 COMPONENTS
   - breadcrumbs
 
 PAGES
   PDP
-    - breadcrumbs
   Collection
 
   Cart
