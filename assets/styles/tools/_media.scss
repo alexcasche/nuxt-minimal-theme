@@ -14,5 +14,5 @@
   @media only screen and (max-width: $breakpoint-large - 1) { @content; }
 }
 @mixin media-large-up {
-  @media only screen and (max-width: $breakpoint-large) { @content; }
+  @media only screen and (min-width: $breakpoint-large) { @content; }
 }

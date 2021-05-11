@@ -1,23 +1,23 @@
 <template>
-  <main class="products-page page">
-    <div class="products-page__container container">
-      <div class="products-page__content"
+  <main class="collections-page page">
+    <div class="collections-page__container container">
+      <div class="collections-page__content"
         v-if="products"
       >
-        <part-breadcrumbs class="products-page__breadcrumbs" />
-        <div class="products-page__header">
-          <h1 class="products-page__heading"
-            v-html="'All Products'"
+        <part-breadcrumbs class="collections-page__breadcrumbs" />
+        <div class="collections-page__header">
+          <h1 class="collections-page__heading"
+            v-html="'All Collections'"
           />
-          <product-filter class="products-page__filter"
+          <product-filter class="collections-page__filter"
             v-model="filterModel"
             :products="products"
           />
-          <product-sort class="products-page__sort"
+          <product-sort class="collections-page__sort"
             v-model="sortModel"
           />
         </div>
-        <product-grid class="products-page__grid"
+        <product-grid class="collections-page__grid"
           :products="activeProducts"
         />
       </div>
@@ -34,7 +34,7 @@ import productSort from '~/components/product/product-sort'
 import productGrid from '~/components/product/product-grid'
 
 export default {
-  name: 'pageProducts',
+  name: 'pageCollections',
   components: {
     partBreadcrumbs,
     productFilter,
@@ -80,7 +80,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .products-page__header {
+  .collections-page__header {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -90,7 +90,7 @@ export default {
       align-items: center;
     }
   }
-  .products-page__heading {
+  .collections-page__heading {
     margin: 0;
     @include media-medium-up {
       flex-grow: 1;

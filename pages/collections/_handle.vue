@@ -1,23 +1,23 @@
 <template>
-  <main class="products-page page">
-    <div class="products-page__container container">
-      <div class="products-page__content"
-        v-if="products"
+  <main class="collection-page page">
+    <div class="collection-page__container container">
+      <div class="collection-page__content"
+        v-if="collection && products"
       >
-        <part-breadcrumbs class="products-page__breadcrumbs" />
-        <div class="products-page__header">
-          <h1 class="products-page__heading"
+        <part-breadcrumbs class="collection-page__breadcrumbs" />
+        <div class="collection-page__header">
+          <h1 class="collection-page__heading"
             v-html="'All Products'"
           />
-          <product-filter class="products-page__filter"
+          <product-filter class="collection-page__filter"
             v-model="filterModel"
             :products="products"
           />
-          <product-sort class="products-page__sort"
+          <product-sort class="collection-page__sort"
             v-model="sortModel"
           />
         </div>
-        <product-grid class="products-page__grid"
+        <product-grid class="collection-page__grid"
           :products="activeProducts"
         />
       </div>
@@ -34,7 +34,7 @@ import productSort from '~/components/product/product-sort'
 import productGrid from '~/components/product/product-grid'
 
 export default {
-  name: 'pageProducts',
+  name: 'pageCollection',
   components: {
     partBreadcrumbs,
     productFilter,
@@ -42,6 +42,7 @@ export default {
     productGrid
   },
   data: () => ({
+    collection: false,
     products: false,
     activeProducts: false,
     empty: false,
@@ -49,14 +50,21 @@ export default {
     sortModel: null
   }),
   methods: {
-    async fetchProducts() {
-      this.products = await this.$nacelle.client.data.allProducts()
-      this.activeProducts = this.products
+    async fetchCollection() {
+      this.collection = await this.$nacelle.client.data.collection({
+        handle: this.$route.params.handle
+      })
+      if(this.collection) {
+        this.products = await this.$nacelle.client.data.products({
+          handles: this.collection.productLists[0].handles
+        })
+        this.activeProducts = this.products
+      }
     }
   },
   async fetch() {
     try {
-      await Promise.all([ this.fetchProducts() ])
+      await Promise.all([ this.fetchCollection() ])
     }
     catch(err) {
       this.empty = true
@@ -80,7 +88,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .products-page__header {
+  .collection-page__header {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -90,7 +98,7 @@ export default {
       align-items: center;
     }
   }
-  .products-page__heading {
+  .collection-page__heading {
     margin: 0;
     @include media-medium-up {
       flex-grow: 1;

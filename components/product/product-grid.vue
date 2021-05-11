@@ -28,10 +28,8 @@ export default {
   .product-grid {
     display: grid;
     grid-gap: 60px 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     @include media-medium-up {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    @include media-large-up {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }

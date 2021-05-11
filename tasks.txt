@@ -4,8 +4,8 @@ PARTS
   breadcrumbs
     - previous previous route for products (to keep collection)
   socialShare
+
 PAGES
-  PRODUCTS
   COLLECTION
   PDP
     - description
