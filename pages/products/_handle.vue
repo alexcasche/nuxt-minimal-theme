@@ -4,7 +4,7 @@
       <div class="product-page__content"
         v-if="product"
       >
-        <part-breadcrumbs class="prduct-page__breadcrumbs" />
+        <part-breadcrumbs class="product-page__breadcrumbs" />
         <div class="product-page__main">
           <div class="product-page__media">
             <product-slideshow class="product-page__slideshow"
@@ -40,7 +40,7 @@ export default {
     productSlideshow,
     productForm
   },
-  data: (self = this) => ({
+  data: () => ({
     product: false,
     empty: false,
     formModel: {

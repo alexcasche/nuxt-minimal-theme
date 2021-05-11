@@ -92,6 +92,7 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
+    margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid rgba($color-black, 20%);
   }

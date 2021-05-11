@@ -1,14 +1,20 @@
 COMPONENTS
-  - breadcrumbs
 
+PARTS
+  breadcrumbs
+    - previous previous route for products (to keep collection)
+  socialShare
 PAGES
+  PRODUCTS
+  COLLECTION
   PDP
-  Collection
-
-  Cart
+    - description
+    - general info
+    - share
+    - recommended
 
   Returns
   About Us
+  News (blog)
+  Blog Post
   Home
-  Contact
-  News
