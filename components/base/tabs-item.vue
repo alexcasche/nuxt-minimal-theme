@@ -1,6 +1,6 @@
 <template>
   <div class="tabs-item">
-    <div class="tabs-item"
+    <div class="tabs-item__content"
       v-show="visible"
     >
       <slot />
@@ -35,7 +35,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

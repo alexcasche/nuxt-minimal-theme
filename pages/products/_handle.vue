@@ -21,6 +21,24 @@
             <product-form class="product-page__form"
               :product="product"
             />
+            <base-tabs class="product-page__tabs">
+              <base-tabs-item class="product-page__tab"
+                v-if="product.description"
+                title="description"
+              >
+                <base-rich-text class="product-page__tab-content"
+                  :body="product.description"
+                />
+              </base-tabs-item>
+              <base-tabs-item class="product-page__tab"
+                v-if="info"
+                title="more info"
+              >
+                <base-rich-text class="product-page__tab-content"
+                  :body="info"
+                />
+              </base-tabs-item>
+            </base-tabs>
           </div>
         </div>
       </div>
@@ -45,7 +63,18 @@ export default {
     empty: false,
     formModel: {
       variant: false
-    }
+    },
+    info: `
+      <p><strong>Order Processing</strong></p>
+      <p>All orders placed online Monday-Friday (excluding holidays) before 2PM PST will begin processing that day and ship within 48 hours, pending item availability and credit card verification. Orders placed after 2PM PST will begin processing the next business day. Orders placed on Friday after 2PM PST will begin processing the following Monday. Transit times do not include Saturday, Sunday or holidays.</p>
+      <p>Order processing cut-off times are provided as guidelines only, and do not take into account possible delays caused by item availability and payment verification.</p>
+      <p><strong>Order Processing</strong></p>
+      <p>Orders placed online within said hours using the In-Store pickup option, will be available approximately 2 hours after the order has been processed. Orders will not be made available for pickup until you receive an email confirmation that your order is ready for pickup.</p>
+      <p><strong>Order Processing</strong></p>
+      <p>We do not offer Saturday delivery. Orders shipped to APO/FPO addresses and PO Boxes will ship out via USPS Priority Mail.</p>
+      <p><strong>Tracking your order</strong></p>
+      <p>Upon completion of your order, you will receive a shipment confirmation email, which will include a link that will direct you to updated tracking information.</p>
+    `
   }),
   methods: {
     async fetchProduct() {
@@ -89,5 +118,13 @@ export default {
   }
   .product-page__title {
     margin-bottom: 10px;
+  }
+  .product-page__form {
+    margin-bottom: 60px;
+  }
+  .product-page__tabs {
+    .tabs__trigger {
+      font-size: 2.2rem;
+    }
   }
 </style>

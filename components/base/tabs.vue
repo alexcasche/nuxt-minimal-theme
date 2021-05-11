@@ -1,7 +1,7 @@
 <template>
   <div class="tabs select-none">
-    <ul class="tabs-triggers">
-      <li :class="['tabs-trigger',
+    <ul class="tabs__triggers">
+      <li :class="['tabs__trigger',
           index === active ? 'is-open' : null
         ]"
         v-for="(tab, index) in tabs"
@@ -31,14 +31,15 @@ export default {
 </script>
 
 <style lang="scss">
-  .tabs-triggers {
+  .tabs__triggers {
     display: flex;
-  }
-  .tabs-trigger {
-    padding: 10px 20px;
     border-top: 1px solid rgba($color-black, 20%);
     border-bottom: 1px solid rgba($color-black, 20%);
+  }
+  .tabs__trigger {
+    padding: 0.6em 1em;
     font-size: 1.8rem;
+    text-transform: capitalize;
     cursor: pointer;
     &:hover {
       color: $color-primary;
