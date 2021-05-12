@@ -1,18 +1,20 @@
 <template>
-  <div class="carousel-hero">
+  <section class="carousel-hero"
+    v-if="section"
+  >
     <div class="carousel-hero__container container">
       <base-carousel class="carousel-hero__carousel"
         :options="{
           infinite: true,
           draggable: false,
-          lazyload: true,
+          lazyLoad: 'ondemand',
           dots: true,
           dotsClass: 'carousel-hero__dots',
           controls: true
         }"
       >
         <div class="carousel-hero__slide"
-          v-for="(slide, index) in content.slides"
+          v-for="(slide, index) in section.slides"
           :key="`slide-${index}`"
         >
           <div class="carousel-hero__slide-inner">
@@ -37,7 +39,7 @@
           </div>
         </div>
         <button class="carousel-hero__dot"
-          v-for="(slide, index) in content.slides"
+          v-for="(slide, index) in section.slides"
           :key="`slide-${index}`"
           slot="customPaging"
         />
@@ -57,14 +59,14 @@
         </button>
       </base-carousel>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'sectionCarouselHero',
   props: {
-    content: {
+    section: {
       type: Object,
       required: true
     }

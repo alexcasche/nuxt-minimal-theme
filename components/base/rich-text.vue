@@ -42,8 +42,11 @@ export default {
       padding-left: 0.5em;
       margin: 0.5em 0;
     }
-    a:hover {
+    a {
       color: $color-primary;
+      &:hover {
+        opacity: 0.75;
+      }
     }
     img {
       margin: 40px 0;

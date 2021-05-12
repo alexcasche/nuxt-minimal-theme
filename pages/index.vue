@@ -3,7 +3,7 @@
     <base-section class="home-page__section"
       v-for="(section, index) in sections"
       :key="`section-${index}`"
-      :content="section"
+      :section="section"
     />
   </div>
 </template>
@@ -27,6 +27,23 @@ export default {
             button: { text: 'Shop Mens', url: '/products' }
           }
         ]
+      },
+      {
+        type: 'row-featured',
+        layout: 'image-right',
+        image: {
+          src: 'https://cdn.pixabay.com/photo/2017/09/18/19/16/fashion-2762865_1280.jpg'
+        },
+        heading: 'Welcome to MBK',
+        body: `<p>Our products are inspired by the people and world around us. Beautiful, high quality goods that are designed especially for you. Discover <a href="/about-us">our story</a> and meet the people that make our brand what it is.</p>`
+      },
+      {
+        type: 'row-featured',
+        layout: 'image-left',
+        image: {
+          src: 'https://cdn.pixabay.com/photo/2016/11/23/18/12/bag-1854148_1280.jpg'
+        },
+        body: `<p>All our products are made using the finest materials and craftsmanship. Each product is packaged and delivered with care. Check out our <a href="/contact-us">FAQs</a> for more questions on shipping, processing, and more..</p>`
       }
     ]
   })

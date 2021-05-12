@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { productFilterBy, productSortBy } from '~/assets/scripts/utils'
+import { productFilterSortBy } from '~/assets/scripts/utils'
 
 import partBreadcrumbs from '~/components/parts/breadcrumbs'
 import productFilter from '~/components/product/product-filter'
@@ -72,14 +72,16 @@ export default {
   },
   watch: {
     filterModel: function(val) {
-      this.activeProducts = productFilterBy({
+      this.activeProducts = productFilterSortBy({
         products: this.products,
-        filterBy: val
+        filterBy: val,
+        sortBy: this.sortModel
       })
     },
     sortModel: function(val) {
-      this.activeProducts = productSortBy({
+      this.activeProducts = productFilterSortBy({
         products: this.products,
+        filterBy: this.filterModel,
         sortBy: val
       })
     }

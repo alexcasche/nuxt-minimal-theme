@@ -47,6 +47,17 @@
             </div>
           </div>
         </div>
+        <div class="cart-page__empty"
+          v-else
+        >
+          <p class="cart-page__empty-text"
+            v-html="'Your cart is currently empty.'"
+          />
+          <base-a class="cart-page__empty-link button is-primary"
+            href="/products"
+            v-html="'Start Browsing'"
+          />
+        </div>
       </client-only>
     </div>
   </main>
@@ -112,5 +123,8 @@ export default {
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
+  }
+  .cart-page__empty-text {
+    margin-bottom: 20px;
   }
 </style>

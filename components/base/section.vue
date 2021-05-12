@@ -2,7 +2,7 @@
   <component class="section"
     v-if="component"
     :is="component"
-    :content="content"
+    :section="section"
   />
 </template>
 
@@ -10,7 +10,7 @@
 export default {
   name: 'baseSection',
   props: {
-    content: {
+    section: {
       type: Object,
       required: true
     }
@@ -19,8 +19,8 @@ export default {
     component: false
   }),
   created() {
-    if(this.content && this.content.type) {
-      this.component = require(`~/components/sections/${this.content.type}`).default
+    if(this.section && this.section.type) {
+      this.component = require(`~/components/sections/${this.section.type}`).default
     }
   }
 }

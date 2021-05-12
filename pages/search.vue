@@ -146,7 +146,7 @@ export default {
     width: 100%;
   }
   .search-page__item-details {
-    flex-grow: 1;
+    flex: 1;
   }
   .search-page__item-title {
     display: block;
