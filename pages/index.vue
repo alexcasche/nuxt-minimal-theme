@@ -70,7 +70,16 @@ export default {
           src: 'https://cdn.pixabay.com/photo/2016/11/23/18/12/bag-1854148_1280.jpg'
         },
         body: `<p>All our products are made using the finest materials and craftsmanship. Each product is packaged and delivered with care. Check out our <a href="/contact-us">FAQs</a> for more questions on shipping, processing, and more..</p>`
-      }
+      },
+      {
+        type: 'row-map',
+        layout: 'image-right',
+        image: {
+          src: 'https://cdn.pixabay.com/photo/2015/10/12/15/18/clothing-store-984396_1280.jpg'
+        },
+        body: `<p>150 Elgin Street Ottawa<br />Ontario CA K2P 1L4</p><p>Mon - Fri, 10am - 9pm<br/>Saturday, 11am - 9pm<br/>Sunday, 11am - 5pm</p>`,
+        button: { text: 'Directions', url: 'https://www.google.com/maps?daddr=150+Elgin+Street+Ottawa+Ontario+CA+K2P+1L4' }
+      },
     ]
   })
 }

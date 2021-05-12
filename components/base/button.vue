@@ -35,6 +35,7 @@ export default {
     @include unset-button;
     display: inline-flex;
     justify-content: center;
+    align-items: center;
     padding: 0.5em 1em;
     text-align: center;
     border-radius: 0.375em;
