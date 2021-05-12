@@ -58,7 +58,7 @@
           />
         </button>
       </base-carousel>
-      <base-carousel class="carousel-hero__controlled hide-medium-up"
+      <base-carousel class="carousel-hero__carousel is-controlled hide-medium-up"
         @init="handleInit"
         :options="{
           arrows: false,
@@ -67,11 +67,19 @@
           fade: true
         }"
       >
-        <div class="carousel-hero__controlled-slide"
+        <div class="carousel-hero__slide"
           v-for="(slide, index) in section.slides"
           :key="`slide-${index}`"
         >
-          {{ slide.heading }}
+          <h2 class="carousel-hero__slide-heading"
+            v-if="slide.heading"
+            v-html="slide.heading"
+          />
+          <base-a class="carousel-hero__slide-button button is-primary"
+            v-if="slide.button"
+            :href="slide.button.url"
+            v-html="slide.button.text"
+          />
         </div>
       </base-carousel>
     </div>
@@ -111,6 +119,12 @@ export default {
     position: relative;
     display: flex !important;
     padding-bottom: 30%;
+    .is-controlled & {
+      padding: 30px;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
   }
   .carousel-hero__slide-inner {
     position: absolute;
@@ -147,6 +161,10 @@ export default {
     font-size: 3.2rem;
     line-height: 1.25;
     margin-top: 0;
+    .is-controlled & {
+      color: $color-black;
+      text-align: center;
+    }
   }
   .carousel-hero__dots {
     width: 140px;
