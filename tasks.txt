@@ -1,15 +1,12 @@
 COMPONENTS
 
 PARTS
-  socialShare
-    - pull from fcts repo
-
   breadcrumbs
-    - previous previous route for products (to keep collection)
+    - check backward routes to find collection if it exists
 
 PAGES
   PDP
-    - share
+    - share text
     - recommended
 
   News (blog)

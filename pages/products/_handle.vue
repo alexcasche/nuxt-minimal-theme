@@ -39,9 +39,14 @@
                 />
               </base-tabs-item>
             </base-tabs>
-            <part-social-share class="product-page__share"
-              :title="product.title"
-            />
+            <div class="product-page__share">
+              <h4 class="product-page__share-heading"
+                v-html="'Share This Product'"
+              />
+              <part-social-share class="product-page__share-buttons"
+                :title="product.title"
+              />
+            </div>
           </div>
         </div>
       </div>

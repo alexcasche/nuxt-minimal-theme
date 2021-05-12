@@ -1,17 +1,17 @@
 <template>
   <div class="social-share">
-    <a :class="['social-share__button', `is-${action}`]"
-      v-for="action in actions"
-      :key="action"
-      :href="getHref(action)"
+    <a :class="['social-share__button', `is-${account}`]"
+      v-for="account in accounts"
+      :key="account"
+      :href="actions[account] && actions[account].url"
       target="_blank"
     >
       <base-svg class="social-share__icon"
-        :name="action"
+        :name="account"
       />
       <span class="social-share__text"
-        v-if="text[action]"
-        v-html="text[action]"
+        v-if="actions[account]"
+        v-html="actions[account].text"
       />
     </a>
   </div>
@@ -21,14 +21,14 @@
 export default {
   name: 'partSocialShare',
   props: {
-    actions: {
+    accounts: {
       type: Array,
-      default: [
+      default: () =>([
         'facebook',
         'twitter',
         'pinterest',
         'email'
-      ]
+      ])
     },
     title: {
       type: String,
@@ -36,26 +36,23 @@ export default {
     }
   },
   data: () => ({
-    text: {
-      facebook: 'Share',
-      twitter: 'Tweet',
-      pinterest: 'Pin it',
-      email: 'Send it'
+    actions: {
+      facebook: { text: 'Share', url: null },
+      twitter: { text: 'Tweet', url: null },
+      pinterest: { text: 'Pin it', url: null },
+      email: { text: 'Send it', url: null }
     }
   }),
   methods: {
-    getHref(action) {
-      switch(action) {
-        case 'facebook':
-          return `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&title=${this.title}`
-        case 'twitter':
-          return `https://twitter.com/intent/tweet?url=${window.location.href}&text=${this.title}`
-        case 'pinterest':
-          return `http://www.pinterest.com/pin/create/button/?url=${window.location.href}&description=${this.title}`
-        case 'email':
-          return `mailto:?subject=${this.title}&body=${window.location.href}`
-      }
+    setUrls() {
+      this.actions.facebook.url = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}&title=${this.title}`
+      this.actions.twitter.url = `https://twitter.com/intent/tweet?url=${window.location.href}&text=${this.title}`
+      this.actions.pinterest.url = `http://www.pinterest.com/pin/create/button/?url=${window.location.href}&description=${this.title}`
+      this.actions.email.url = `mailto:?subject=${this.title}&body=${window.location.href}`
     }
+  },
+  mounted() {
+    if(process.browser) this.setUrls()
   }
 }
 </script>
