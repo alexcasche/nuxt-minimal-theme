@@ -1,5 +1,8 @@
 COMPONENTS
 
+MOBILE NAV
+  - close on route change
+
 PARTS
   breadcrumbs
     - previous previous route for products (to keep collection)
@@ -7,14 +10,17 @@ PARTS
     - pull from fcts repo
 
 PAGES
+  Home
+    - hero
+      - mobile (linked carousel)
+
   PDP
     - share
     - recommended
 
-  Home
-    - row-map
-    - hero
-      - mobile (linked carousel)
-
   News (blog)
   Blog Post
+
+
+
+

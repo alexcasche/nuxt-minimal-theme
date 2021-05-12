@@ -110,5 +110,7 @@ export default {
   }
   .row-map__button-text {
     margin-left: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 </style>

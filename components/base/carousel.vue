@@ -1,5 +1,10 @@
 <template>
   <vue-slick-carousel class="carousel"
+    ref="carousel"
+    @init="handleInit"
+    @reInit="handleReInit"
+    @beforeChange="handleBeforeChange"
+    @afterChange="handleAfterChange"
     v-bind="options"
   >
     <template #prevArrow
@@ -34,6 +39,45 @@ export default {
   },
   components: {
     vueSlickCarousel
+  },
+  methods: {
+    handleInit() {
+      this.$emit('init', this)
+    },
+    handleReInit() {
+      this.$emit('reInit', this)
+    },
+    handleBeforeChange(oldIndex, newIndex) {
+      this.$emit('beforeChange', oldIndex, newIndex)
+    },
+    handleAfterChange(index) {
+      this.$emit('afterChange', index)
+    },
+    prev() {
+      if(this.$refs.carousel) {
+        this.$refs.carousel.prev()
+      }
+    },
+    next() {
+      if(this.$refs.carousel) {
+        this.$refs.carousel.next()
+      }
+    },
+    goTo(index) {
+      if(this.$refs.carousel) {
+        this.$refs.carousel.goTo(index)
+      }
+    },
+    play() {
+      if(this.$refs.carousel) {
+        this.$refs.carousel.play()
+      }
+    },
+    pause() {
+      if(this.$refs.carousel) {
+        this.$refs.carousel.pause()
+      }
+    }
   }
 }
 </script>

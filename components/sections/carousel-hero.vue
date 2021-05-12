@@ -4,13 +4,13 @@
   >
     <div class="carousel-hero__container container">
       <base-carousel class="carousel-hero__carousel"
+        @beforeChange="handleChange"
         :options="{
-          infinite: true,
-          draggable: false,
-          lazyLoad: 'ondemand',
           dots: true,
           dotsClass: 'carousel-hero__dots',
-          controls: true
+          draggable: false,
+          infinite: true,
+          lazyLoad: 'ondemand'
         }"
       >
         <div class="carousel-hero__slide"
@@ -23,7 +23,7 @@
               :src="slide.image.src"
               :alt="slide.image.alt"
             />
-            <div class="carousel-hero__slide-wrapper">
+            <div class="carousel-hero__slide-wrapper hide-medium-down">
               <div class="carousel-hero__slide-content">
                 <h2 class="carousel-hero__slide-heading"
                   v-if="slide.heading"
@@ -58,6 +58,22 @@
           />
         </button>
       </base-carousel>
+      <base-carousel class="carousel-hero__controlled hide-medium-up"
+        @init="handleInit"
+        :options="{
+          arrows: false,
+          dots: false,
+          draggable: false,
+          fade: true
+        }"
+      >
+        <div class="carousel-hero__controlled-slide"
+          v-for="(slide, index) in section.slides"
+          :key="`slide-${index}`"
+        >
+          {{ slide.heading }}
+        </div>
+      </base-carousel>
     </div>
   </section>
 </template>
@@ -69,6 +85,17 @@ export default {
     section: {
       type: Object,
       required: true
+    }
+  },
+  data: () => ({
+    carouselControlled: null
+  }),
+  methods: {
+    handleInit(carousel) {
+      this.carouselControlled = carousel
+    },
+    handleChange(oldIndex, newIndex) {
+      this.carouselControlled.goTo(newIndex)
     }
   }
 }
