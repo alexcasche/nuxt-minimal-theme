@@ -2,6 +2,7 @@
   <div class="header-search">
     <form class="header-search__form"
       @submit.prevent="handleSubmit"
+      ref="form"
     >
       <button class="header-search__button">
         <base-svg class="header-search__svg"
@@ -44,6 +45,12 @@ export default {
   },
   mounted() {
     if(this.query) this.formModel.query = this.query
+  },
+  watch: {
+    query: function(val) {
+      if(this.$refs.form) this.$refs.form.reset()
+      this.formModel.query = val || ''
+    }
   }
 }
 </script>

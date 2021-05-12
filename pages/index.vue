@@ -39,7 +39,7 @@ export default {
           },
           {
             image: { src: 'https://cdn.pixabay.com/photo/2015/07/02/10/28/person-828781_1280.jpg' },
-            text: 'Mens Shirt',
+            text: 'Mens Shirts',
             url: '/products'
           },
           {
@@ -49,7 +49,7 @@ export default {
           },
           {
             image: { src: 'https://cdn.pixabay.com/photo/2015/07/02/10/28/person-828781_1280.jpg' },
-            text: 'Mens Shirt',
+            text: 'Mens Shirts',
             url: '/products'
           }
         ]

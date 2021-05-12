@@ -4,7 +4,7 @@
   >
     <nav class="header-menu__items">
       <div class="header-menu__item"
-        v-for="item in items"
+        v-for="(item, index) in items"
         :key="item.text"
       >
         <base-a class="header-menu__link"
@@ -14,6 +14,8 @@
         />
         <base-accordion class="header-menu__accordion"
           v-else
+          :ref="`accordion-${index}`"
+          :close="!visible"
         >
           <base-accordion-item class="header-menu__accordion-item">
             <div class="header-menu__trigger"
