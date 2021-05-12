@@ -48,11 +48,21 @@ export default {
 </script>
 
 <style lang="scss">
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
   .product-card__media {
-    margin-bottom: 10px;
     .product-card:hover & {
       opacity: 0.85;
     }
+  }
+  .product-card__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
   }
   .product-card__title {
     font-size: 1.5rem;

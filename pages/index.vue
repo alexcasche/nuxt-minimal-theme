@@ -29,6 +29,32 @@ export default {
         ]
       },
       {
+        type: 'grid-featured',
+        heading: 'Featured Selection',
+        items: [
+          {
+            image: { src: 'https://cdn.pixabay.com/photo/2017/09/19/21/35/fashion-2766725_1280.jpg' },
+            text: 'Womens Dresses',
+            url: '/products'
+          },
+          {
+            image: { src: 'https://cdn.pixabay.com/photo/2015/07/02/10/28/person-828781_1280.jpg' },
+            text: 'Mens Shirt',
+            url: '/products'
+          },
+          {
+            image: { src: 'https://cdn.pixabay.com/photo/2017/09/19/21/35/fashion-2766725_1280.jpg' },
+            text: 'Womens Dresses',
+            url: '/products'
+          },
+          {
+            image: { src: 'https://cdn.pixabay.com/photo/2015/07/02/10/28/person-828781_1280.jpg' },
+            text: 'Mens Shirt',
+            url: '/products'
+          }
+        ]
+      },
+      {
         type: 'row-featured',
         layout: 'image-right',
         image: {

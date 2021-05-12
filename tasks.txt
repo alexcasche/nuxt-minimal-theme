@@ -12,9 +12,6 @@ PAGES
     - recommended
 
   Home
-    - row-featured
-
-    - grid-featured
     - row-map
     - hero
       - mobile (linked carousel)

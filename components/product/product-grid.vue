@@ -33,4 +33,7 @@ export default {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+  .product-grid__item {
+    height: 100%;
+  }
 </style>

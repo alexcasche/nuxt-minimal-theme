@@ -38,9 +38,9 @@ export default {
 
 <style lang="scss">
   .row-featured {
-    padding: 14px 0;
+    padding: 30px 0;
     @include media-medium-up {
-      padding: 28px 0;
+      padding: 40px 0;
     }
   }
   .row-featured__container {
