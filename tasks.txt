@@ -3,6 +3,7 @@ COMPONENTS
 PARTS
   socialShare
     - pull from fcts repo
+
   breadcrumbs
     - previous previous route for products (to keep collection)
 

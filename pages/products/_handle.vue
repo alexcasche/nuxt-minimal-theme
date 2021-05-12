@@ -39,6 +39,9 @@
                 />
               </base-tabs-item>
             </base-tabs>
+            <part-social-share class="product-page__share"
+              :title="product.title"
+            />
           </div>
         </div>
       </div>
@@ -50,13 +53,15 @@
 import partBreadcrumbs from '~/components/parts/breadcrumbs'
 import productSlideshow from '~/components/product/product-slideshow'
 import productForm from '~/components/product/product-form'
+import partSocialShare from '~/components/parts/social-share'
 
 export default {
   name: 'pageProduct',
   components: {
     partBreadcrumbs,
     productSlideshow,
-    productForm
+    productForm,
+    partSocialShare
   },
   data: () => ({
     product: false,
